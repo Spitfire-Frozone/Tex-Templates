@@ -1,0 +1,381 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{adjustbox} %Allows for the creation of boxes that can be sized independently
+\usepackage{amsmath, amssymb, amsthm}% For mathematical Symbols
+\usepackage{array} % Allows the further manipulation of tables
+\usepackage{caption} %Allows for captions to be present without figure environment
+\usepackage{fancyhdr} % Puts headers and footers into the document
+\usepackage[font={small,it}]{caption}%Allows the manipulation of caption font size
+\usepackage{float} %Allows new float types to be created such as the appendix type.
+\usepackage{gensymb} %For use of \degree which is used like once in this fucking thing
+\usepackage[margin=20mm]{geometry} % Alters the margins
+\usepackage{graphicx} % Allows the maniupulation of images
+\usepackage{hyperref} % Allows for hyperlinks
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage{tabu} %Allows for greater table edition flexibility.
+\usepackage{verbatim} %Allows for the comment environment
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor} %Allows the use of coloured text
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}} %Allows for the non-cramping of complicated mathematical expressions in fractions.
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{} %Allows the References section to get rid of the second incidence of 'references'
+
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyhead[C]{Beans On Roast $\bullet$ April 2019 $\bullet$ Original Constitution} % Custom header text
+\fancyfoot{} % Blank out the default footer
+\fancyfoot[C]{\thepage} % Custom footer text
+
+\begin{document}% Starts the Document
+%--------------------------------------------------------------------------------TITLE PAGE
+\begin{titlepage} %Starts the Title Page
+\begin{center} %Centres the items that follow
+%\includegraphics[width=0.3\textwidth]{Placeholder.png}%Inserts University Logo
+
+Established: Monday 8th April 2019\\
+Constitution Edited: \today $\quad$ Version 10\\[1cm]
+
+School of Physics and Astronomy - University of Glasgow\\
+Partick, Glasgow\\
+G12 8QQ\\[4mm] %Adds the postcode of the uni and then a 4mm gap.
+\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
+{\Huge \textbf{Beans On Roast Constitution}}
+\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
+\end{center}
+
+\centering
+\noindent {\small
+We the members of this organisation, in order to maintain a high standard of caffeinated beverage consumption in the workplace do ordain and establish this Constitution for the governance of this organisation.}
+
+\tableofcontents
+
+\end{titlepage}
+
+
+
+%-------------------------------------------------------------------------------------------- NAME
+\section{Name}
+\label{Name}
+1.0.1$\quad$By majority approval of the Founding Members of the organisation (See Section \ref{Founding Members}) the name of this organisation, or the Club, shall be \textit{\textbf{Beans on Roast}}, hereafter also referred to as \textit{Beans on Roast}, \textit{BoR} or more colloquially \textit{Beans}.
+%-------------------------------------------------------------------------------------------- PURPOSE
+\section{Purpose}
+\label{Purpose}
+2.0.1$\quad$The purpose of this organisation shall be to ensure that members have access to quality coffee on a daily basis. By taking in regular payments from members, a pool of funds will develop which members can use to purchase coffee, preferably in the form of roasted beans, and milk for the aforementioned coffee. \\
+
+\noindent 2.0.2$\quad$After a period of time designated by the qualified majority of members, the budget surplus will be used to fund the provision of alcohol and nibbles for a \textbf{Beans on Roast} social event.
+
+%-------------------------------------------------------------------------------------------- MEMBERSHIP
+\section{Membership}
+\label{Membership}
+\subsection{Titles}
+\label{Titles}
+3.0.1$\quad$All members of \textbf{Beans on Roast} shall during official business be referred to as \textit{The Honourable Gentleman/Lady}. The original members of \textbf{Beans on Roast} will be referred to as \textit{The Right Honourable Gentleman/Lady}.
+
+\subsection{Founding Members}
+\label{Founding Members}
+\noindent 3.2.1$\quad$The eight persons that cosign and ratify this, the Original Constitution, form the original members of \textbf{Beans on Roast}, hereafter known as the Founding Members. The Founding Members are listed below in order of their country of birth in alphabetical order: 
+
+\begin{table}[h!]
+\begin{tabular}{ll}
+\textbf{The Right Honourable Gentleman from  Belarus} & Dzmitry `Dima'  Maneuski \\
+\textbf{The Right Honourable Gentleman from England} & Dwayne `Dean' Spiteri \\
+\textbf{The Right Honourable Gentleman from Ireland} & Conor Harkin \\
+\textbf{The Right Honourable Gentleman from Lithuania} & Laurynas `Lorry' Mince \\
+\textbf{The Right Honourable Gentleman from Malaysia} & Lojius `Binman' Lombigit \\
+\textbf{The Right Honourable Gentleman from Scotland, Arbroath} & Neil `The Moth' Moffat \\
+\textbf{The Right Honourable Gentleman from Scotland, Dundee} & Adam `Tablet' Rennie \\
+\textbf{The Right Honourable Gentleman from Catalonia (Spain)} & Lluis `Don Simon' Argemi
+\end{tabular}
+\end{table}
+
+\noindent 3.2.2$\quad$As of 24/01/2020 The currently active Founding Members are as follows: 
+
+\begin{table}[h!]
+\begin{tabular}{ll}
+\textbf{The Right Honourable Gentleman from  Belarus} & Dzmitry `Dima'  Maneuski \\
+\textbf{The Right Honourable Gentleman from England} & Dwayne `Dean' Spiteri \\
+\textbf{The Right Honourable Gentleman from Malaysia} & Lojius `Binman' Lombigit \\
+\textbf{The Right Honourable Gentleman from Catalonia (Spain)} & Lluis `Don Simon' Argemi \\
+\end{tabular}
+\end{table}
+
+\subsection{New Members}
+\label{New Members}
+3.3.1$\quad$New members are welcome to apply to join \textbf{Beans on Roast}. An item of business will be raised at the next General Meeting (GM) (see Section \ref{Rules of Meetings}) and a vote will be conducted.\\ 
+
+\noindent 3.3.2$\quad$A new member will be approved if they receive unanimous approval in the aforementioned vote from the Founding Members (see Section \ref{Types of Vote}). \\
+
+\noindent 3.3.3$\quad$The applicant does not have to be present for the vote in order to be accepted. 
+
+\noindent 3.3.4$\quad$A new member will be provisionally approved if they receive majority approval from the Founding Members at any time, but this decision must be ratified at the next GM. \\
+
+\noindent 3.2.5$\quad$New Members are listed below in order of their country of birth in alphabetical order: 
+\begin{table}[h!]
+\begin{tabular}{ll}
+\textbf{The Honourable Gentleman from  Scotland, East Renfrewshire} & Johnny `Joannah' Friend \\
+\textbf{The Honourable Lady from India} & Sneha `The Slayer' Naik \\
+\textbf{The Honourable Gentleman from Scotland, Paisley} & Craig `Icantbelieveitsnot' Buttar\\
+\textbf{The Honourable Gentleman from Scotland, North Renfrewshire} & Jonathan `Triple-J' Jamieson
+\end{tabular}
+\end{table}
+
+\subsection{Termination of Membership}
+\label{Termination of Membership}
+3.4.1$\quad$Membership can be terminated in two ways. They can elect to leave on their own merit or they can be voted out of the organisation. \\
+
+\noindent 3.4.2$\quad$If a member leaves the organisation they lose all rights to claim back any money they paid in advance to \textbf{Beans on Roast} for the Club fees of future weeks.\\
+
+\noindent 3.4.3$\quad$Members that have left the club indefinitely are listed here for prosperity.
+\begin{table}[h!]
+\begin{tabular}{ll}
+\textbf{The Right Honourable Gentleman from Ireland} & Conor Harkin \\
+\textbf{} &  \\
+\textbf{The Honourable Lady from Brazil} & Angel Lira \\
+\textbf{The Honourable Gentleman from Ireland} & Conor Darroch \\
+\textbf{The Honourable Gentleman from Turkey} & Kaan Veziro\u glu \\
+\textbf{The Honourable Lady from Scotland} & Jill `Jilly Bean' Borland
+\end{tabular}
+\end{table}
+
+\noindent \textbf{Elective}\\
+3.4.3$\quad$A member can elect to leave \textbf{Beans on Roast}. Two weeks notice is required and termination will be immediate at the end of this period if all outstanding debts belonging to that member in relation to \textbf{Beans on Roast} have been settled. \\
+
+\noindent 3.4.4$\quad$If these debts have not been settled by this point, the member still loses all rights of membership but becomes a \textit{Disputed Non-Member} until the time all debts are settled whereupon all membership status of said individual is revoked.\\
+
+\noindent \textbf{Voted}  \\
+3.4.5$\quad$The Membership of an individual member can be revoked by unanimous approval of all other members at any GM.\\ 
+
+\noindent 3.4.6$\quad$If revoked in this way, the member is not under any obligation to settle any outstanding debt.\\
+
+\subsection{Suspension of Membership}
+\label{Suspension of Membership}
+3.5.1$\quad$A member can choose to suspend their membership of the coffee club if they are going away for a long period of time, but plan to become an active member upon their return.\\ 
+
+\noindent 3.5.2$\quad$These members are not required to pay the weekly fee unless they are in Glasgow for the better part of a week.\\ 
+
+\noindent 3.5.3$\quad$If the suspended member is the Treasurer, they must hand over control of the account to an active member of the Club.\\  
+
+\noindent 3.5.4$\quad$Current members that are on \textit{Suspended Membership} include:
+\begin{table}[h!]
+\begin{tabular}{ll}
+\textbf{The Right Honourable Gentleman from Lithuania} & Laurynas `Lorry' Mince \\
+\textbf{The Right Honourable Gentleman from Scotland, Dundee} & Adam `Tablet' Rennie \\
+\textbf{The Honourable Gentleman from Japan} & Ryuji Moriya
+\end{tabular}
+\end{table}
+
+
+\subsection{Roles}
+\label{Roles}
+3.5.1$\quad$There are two roles in \textbf{Beans on Roast}. The Treasurer and the Secretary of \textbf{Beans on Roast}\\
+\textbf{Chancellor}\\
+
+\noindent 3.5.2$\quad$The Treasurer of \textbf{Beans on Roast}, hereby referred to as \textit{the Chancellor} is responsible for the money that flows in and out of the Club. They make sure that members pay what they are due, and keep track of all ingoing funds and outgoing expenditures made by members on behalf of the Club.\\
+
+\noindent 3.5.2.1$\quad$The First Chancellor of \textbf{Beans on Roast} is The Right Honourable Gentleman from Lithuania.\\
+\noindent 3.5.2.2$\quad$As of the 29/09/2019 The Second Chancellor of \textbf{Beans on Roast}is The Right Honourable Gentleman from Scotland, Arbroath.\\
+\noindent 3.5.2.2$\quad$As of the 13/01/2020 The Third Chancellor of \textbf{Beans on Roast} is The Honourable Gentleman from Scotland, East Renfrewshire.\\
+
+
+\textbf{Speaker}\\
+
+\noindent 3.5.3$\quad$The Secretary of \textbf{Beans on Roast}, hereby known as the \textit{the Speaker} chairs meetings held by members and is responsible for writing official documents such as Constitutions and Meeting minutes.\\ 
+
+\noindent 3.5.3.1$\quad$The First Speaker of \textbf{Beans on Roast} is The Right Honourable Gentleman from England.\\
+\subsection{Honorary Members}
+\label{Honorary Members??}
+\noindent 3.6.1$\quad$Members who effectively leave \textbf{Beans on Roast}, but are still affiliated with the Club enough such that a protracted stay at Glasgow is possible, then those members qualify for Honorary Membership.\\
+
+\noindent 3.6.2$\quad$Payment of fees for Honorary Membership follow the same as those for suspended members as outlined in Section \ref{Suspension of Membership}.\\
+
+\noindent 3.6.3$\quad$Current members that are on \textit{Suspended Membership} include:
+\begin{table}[h!]
+\begin{tabular}{ll}
+\textbf{The Honourable Gentleman from  Scotland, Arbroath} & Neil `The Moth' Moffat \\
+\end{tabular}
+\end{table}
+%-------------------------------------------------------------------------------------------- RULES
+
+\section{Rules of Membership}
+\label{Rules of Membership}
+
+\subsection{Coffee Etiquette}
+4.1.1$\quad$A member tasked with the purchasing of \textit{Coffee} for the club on a given time-scale should do so in a timely manner.\\
+
+
+\noindent 4.1.2$\quad$Once brewed, the coffee pot is not allowed to leave the perimeter of office until it is either empty or the coffee in the pot was brewed on a previous day.\\ 
+
+\noindent 4.1.3$\quad$The member that finishes the pot of coffee must turn the machine off, but if there is coffee in the pot at the end of the day then the responsibility falls on the last person to leave the particle physics detector PhD office 368a, hereby referred to as \textit{The Clubhouse}, to ensure that the coffee machine is switched off. \\
+
+\noindent 4.1.4$\quad$All coffee brought into the office becomes property of the Club and therefore only members are allowed to drink it.\\
+
+\noindent 4.1.5$\quad$If a non-member would like to partake in coffee that belongs to the club, they must obtain a Day-Pass.\\
+
+\noindent 4.1.6$\quad$A Day-Pass allows a non-member to drink the coffee produced at \textbf{Beans on Roast} for the members, for free for one working day.\\
+
+\noindent 4.1.7$\quad$A Day-Pass is granted to a non-member if a simple majority of present members agree to it.In the event of a tie on this vote, the Speaker decides if the Day-Pass is granted.\\  
+
+\noindent 4.1.8$\quad$For measures taken if a member has found to have broken these rules see Section \ref{Punishment}.\\
+
+
+\subsection{Fees}
+\noindent 4.2.1$\quad$There are two types of fee that members have to pay. A joining fee and a weekly fee. The joining fee for Founding members is $\pounds$1 and the weekly fee for all full-time members is fixed at $\pounds$2 a week.\\
+
+\noindent 4.2.2$\quad$The weekly fee for all part-time members is fixed at $\pounds$1 a week.\\
+
+\noindent 4.2.3$\quad$\textcolor{green}{Lojius' Law:} The joining fee for new members is $\pounds$2.
+
+\subsection{Methods of Payment}
+4.3.1$\quad$\textit{The Chancellor} will handle the taking of fees from members and will log who had paid and who has not.\\
+
+\noindent 4.3.2$\quad$\textit{The Chancellor} accepts the following as valid forms of payment: money via Revolut, money via Monzo, bank transfers and cash payments.\\
+
+\noindent 4.3.3$\quad$\textcolor{green}{Adam's Amendment:} All cash payments, however, incur an administration fee of $\pounds$1 per transaction.
+
+
+\subsection{Payment Practices}
+4.4.1$\quad$Payments for any week can be accepted anytime. Nominally weekly payments are to be made for the following week. Members can pay for multiple weeks in advance. \\
+
+\noindent 4.4.2$\quad$\textcolor{green}{Conor's Clause:} Payments that are made during the week they are required or are made for a past week incur a fee of $\pounds$1 per week in question. 
+
+\noindent 4.4.3$\quad$ By unanimous agreement on the 09/09/2019. Payment fees have been suspended.  
+
+\subsection{Account Details}
+4.5.1$\quad$\textbf{Beans on Roast} shall have its own bank account, known as the \textit{Account}, that shall be created for this club. \\
+
+\noindent 4.5.2$\quad$\textit{The Card} for this account shall be as known as the \textit{Beans on Roast Card} or hereby as just \textit{the Card}. Responsibility for \textit{the Card} is under the individual using at the time, and \textit{the Card} is property of \textbf{Beans on Roast}.\\
+
+\noindent 4.5.3$\quad$\textcolor{green}{Laurynas' Liability:} As the manager of \textit{the Account}, \textit{the Chancellor} will have ultimate responsibility for the account itself. 
+
+\subsection{Spending Club Money}
+4.6.1$\quad$Money collected can only be used on coffee and/or milk for the organisation \textbf{Beans on Roast}, hereby referred to as \textit{Coffee}, unless the expenditure has been approved beforehand unanimously by all members. \\
+
+\noindent 4.6.2$\quad$All members should be able to access and use the \textit{Card} to buy \textit{Coffee}. Any individual member can either purchase \textit{Coffee} and then claim the money back, which requires a receipt, or can use the \textit{Card} directly for the express use of purchasing \textit{Coffee}.\\
+
+\noindent 4.6.3$\quad$\textcolor{green}{Dwayne's Designation:} If \textit{the Card} is used for any unauthorised purposes, the member must pay back what was spent. All other members shall vote on whether an additional fine should have to be paid in addition. This vote passes with simple majority of members present.
+
+\subsection{Fee Waiving}
+4.7.1$\quad$If a member is away for the majority of the working week (3 or more days normally, 2 or more days if there is a national holiday during that week), they are exempt from the fee for coffee that week.\\
+
+\noindent 4.7.2$\quad$If they have denoted that they will be missing at least one week in advance. A member being away counts as all work-related reasons that a member does not come into the office (e.g. conferences and workshops), all work done outside the City of Glasgow, all holidays and all Leave (planned and unplanned).\\
+
+\noindent 4.7.3$\quad$\textcolor{green}{Lluis Levy:} A member working from home within the Metropolitan Glasgow Area still has to pay all fees.
+
+\subsection{Communication}
+4.8.1$\quad$In order to facilitate transparency and easy communication between members, a document accessible to all members shall be created to denote which members have paid for which weeks, how much money is in \textit{the Account}, and has a place to denote expected days off.\\
+
+\noindent 4.8.2$\quad$\textcolor{green}{Dima's Deal:} A WhatsApp group will also be created to alert members when a pot of coffee has been produced and allow members to converse with one another.\\
+
+\subsection{Punishment}
+\label{Punishment}
+4.9.1$\quad$If the majority of the members decide that a rule of the Club has been broken, all offending member(s) must pay a fine. \\
+
+\noindent 4.9.2$\quad$The fine shall be means tested depending on income. The fine is doubled for each repeat offence.\\   
+
+\noindent 4.9.3$\quad$\textcolor{green}{Neil's Note:} If the member has no salary, the fine is $\pounds$1; for members that are externally funded, this is $\pounds$2; and for academic staff, the fine is 50p per grade or $\pounds$3, whichever is higher.
+
+\subsection{Party}
+4.10.1$\quad$At some time agreed upon by the members, the surplus money in the \textit{Account} shall be used for some sort of social function.\\
+
+\noindent 4.10.2$\quad$\textcolor{green}{Beans' Bacchanalia:} The first time this will occur will be some time before The Right Honourable Gentleman from Ireland leaves Glasgow. 
+
+%-------------------------------------------------------------------------------------------- RULES OF MEETINGS AND PROCEEDURES
+\section{Rules of Meetings and Procedures}
+\subsection{Rules of Meetings}
+\label{Rules of Meetings}
+5.1.1$\quad$There are three different types of meetings General Meetings (GM's), Bi-annual General Meetings (BGM's) and Emergency General Meetings (EGM's).\\ 
+
+\noindent 5.1.2$\quad$\textbf{Beans on Roast} will hold a GM on the first working Monday of every month, and will hold a BGM in April and September. An EGM can be called to discuss any issues that arrive. Quoracy of any GM is 75\% of the members at the time when the GM was called.\\ 
+
+\noindent 5.1.3$\quad$\textit{The Speaker} chairs the meeting. \\
+
+\noindent 5.1.4$\quad$The Tiebreaker is a temporary role that exists for each meeting. The Founding Member that will be the Tiebreaker is decided before each meeting and every Founding Member has a turn as Tiebreaker before a Founding Member is selected as Tiebreaker again. \\
+
+\noindent 5.1.5 The main aim of a meeting is to discuss and resolve issues. If an issue is raised during the meeting it is debated and voted on. 
+\subsection{Types of Vote}
+\label{Types of Vote}
+5.2.1$\quad$When a vote is proposed, unless specified elsewhere in this document, it will be either Relative or Simple.\\
+
+\noindent 5.2.2$\quad$If a vote has one option it is voted on Simply, but if there are multiple options, it is voted on Relatively. Qualified and Unanimous votes are decided before the meeting or in the constitution. 
+\begin{itemize}
+\item A Relative Vote has multiple options and members cast votes for as many options as they like and the selected option with the most votes is chosen. 
+\item A Simple Vote can either pass or fail and requires at least 50\% of present members to approve a motion to pass, with tie breakers in the event of 50\% approval. 
+\item A Qualified Vote can either pass or fail and requires 70\% of present members to approve a motion to pass. 
+\item A Unanimous Vote can either pass or fail and requires 100\% of present members to approve a motion to pass. 
+\end{itemize}
+
+\subsection{Rules of Elections}
+\label{Rules of Elections}
+5.3.1$\quad$There are two roles up for election in \textbf{Beans on Roast}: Chancellor and Speaker. Any member can nominate another member, or themselves.\\ 
+
+\noindent 5.3.2$\quad$If there are no objections to the nomination or the nomination has been seconded, that candidate can stand for election for that position. When all candidates are selected for a position, each gets time to say why they should go for the position if required.\\
+
+\noindent 5.3.3$\quad$Votes are cast openly and each member can only vote once in an election, but are allowed to vote for themselves. Votes for any position are Relative.\\  
+
+\noindent 5.3.4$\quad$Members can vote in absentia for elections if they submit their vote in advance.\\
+
+\noindent 5.3.5$\quad$For a Simple Vote, in the event of a tie the side that has both \textit{the Chancellor} and \textit{the Speaker} on it is the victor. \\
+
+\noindent 5.3.6$\quad$In the event that \textit{the Chancellor} and Speaker do not agree, the side with the most Founding members on it wins. If the tie is still unresolved after this, then whichever Founding Member is the tiebreaker at that meeting decides the victor.\\
+
+\noindent 5.3.7$\quad$For a Relative Vote, in the event of a tie for the best option that has both \textit{the Chancellor} and the Speaker on it is the victor. In the case that \textit{the Speaker} and \textit{the Chancellor} so not agree, then the Tiebreaker will decide the victor between the tying best options.
+
+\subsection{First Meeting - Beans on Roast BGM}
+\label{First Meeting - Beans on Roast BGM}
+[Monday 9th April 2019]\\
+Members Present:\\
+The Right Honourable Gentleman from Belarus\\
+The Right Honourable Gentleman from England\\
+The Right Honourable Gentleman from Ireland\\
+The Right Honourable Gentleman from Lithuania\\
+The Right Honourable Gentleman from Malaysia\\
+The Right Honourable Gentleman from Scotland, Arbroath\\
+The Right Honourable Gentleman from Scotland, Dundee\\
+
+\noindent The Right Honourable Gentleman from Spain was in Germany on official business and there was no Tiebreaker selected for this meeting. He submitted no votes in advance.\\
+    
+\noindent There were two candidates for the position of \textit{The Chancellor}. The Right Honourable Gentleman from Scotland, Arbroath and The Right Honourable Gentleman from Lithuania. Votes for the former were 1, with The Right Honourable Gentleman from Scotland, Arbroath voting for himself and votes for the latter were the rest of the present members, 6. The Right Honourable Gentleman from Scotland, Arbroath insisted that if The Right Honourable Gentleman from Spain was in fact present, that they would have voted for him. The First Chancellor of \textbf{Beans on Roast} is Laurynas Mince. \\
+
+\noindent \textit{The Chancellor} was then actioned to do three things.
+\begin{itemize}
+\item To create a Monzo account for \textbf{Beans on Roast} and send its account details to all members.
+\item To create a Google Spreadsheet for \textbf{Beans on Roast} related monetary items.
+\item To create a way of tracking fee exemptions for members.
+\end{itemize}
+
+\noindent The subject of how to communicate the brewing of coffee to members was raised. A proposal for WhatsApp was suggested and put to the vote. All but the The Right Honourable Gentleman from England voted for this. The Right Honourable Gentleman from Belarus created a WhatsApp group during the meeting.\\
+
+\noindent For the position of \textit{The Speaker} there was only one candidate, The Right Honourable Gentleman from England. There were 7 votes to approve of his assumption of this position since `he seemed to already like writing things down'. The First Speaker of \textbf{Beans on Roast} is Dwayne Spiteri. \\
+\noindent \textit{The Speaker} was then actioned to do two things.
+\begin{itemize}
+\item To write up minutes for the meeting
+\item To write down all the regulations for \textbf{Beans on Roast} that were agreed on during the meeting.
+\end{itemize}
+
+\noindent The meeting was 45 minutes long. A good time was had by all. The matter of a name for the Club had not been solved. Some names were tossed about during the meeting but none received a majority of the approval from members. Members were invited to post ideas to WhatsApp for a vote.\\ 
+
+\noindent Later The Right Honourable Gentleman from Scotland, Arbroath submitted; ``Sucky Sucky Brew Brew", ``Flick my Bean" and ``Smelly Beans" and The Right Honourable Gentleman from England submitted;``Steaming Hotties and Coffee (SHaC)", ``Beans on Roast", ``Brew Your Own Beverage (BYOB)", ``Caledonian Coffee Collective (CCC)" and ``Glasgow Roasting Club (GRC)". ``Beans on Roast" received 5 explicit first choice votes and thus was chosen the name of the Club.
+
+%-------------------------------------------------------------------------------------------- THE CONSTITUTION
+\section{Ratification of Constitution}
+6.0.1$\quad$For the First Ratification of the Original Constitution, the constitution will be sent to all members for them to comment on, spot typographical errors, and approve or discuss improvements for items added to the constitution not explicitly covered during the AGM.\\ 
+
+\noindent 6.0.2$\quad$The Original Constitution is then ratified by a Qualified Majority of the Founding Members. 
+   
+\section{Constitutional Amendments}
+7.0.1$\quad$Generally after the first ratification, any part of the constitution can be changed at any GM. All votes on constitution amendments need a Qualified Majority.\\
+
+\noindent 7.0.2$\quad$It falls on \textit{the Speaker} to make the changes to the original document and circulate the updated constitution as soon as possible to all members. 
+
+\section{Interpretation of Constitution}
+8.0.1$\quad$Questions concerning the interpretation of this document shall be decided by the Founding Members.
+
+%-------------------------------------------------------------------------------------------- THE CONSTITUTION
+\section{Dissolution of the Club}
+9.0.1$\quad$If during a GM, the motion to dissolve \textbf{Beans on Roast} is raised and is seconded, then a vote on the motion will occur. If this vote receives approval of all but one member, then the motion carries and \textbf{Beans on Roast} is thereby dissolved.\\ 
+
+\noindent 9.0.2$\quad$Every time a Founding Member leaves Glasgow, the motion to dissolve the Club is put forward automatically at the following GM.
+
+\end{document}% Ends the Document

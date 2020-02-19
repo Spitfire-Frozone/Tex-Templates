@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% Generic Feynman diagrams                                                     %
+%                                                                              %
+% version: 2016-04-12T1316Z                                                    %
+%                                                                              %
+% Will Breaden Madden                                                          %
+% Edited by Jonathan Jamieson                                                  %
+% Post-Edited by Dwayne Spiteri                                                %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% DESCRIPTION                                                                  %
+%                                                                              %
+% This program produces several Feynman diagrams.                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% LICENCE INFORMATION                                                          %
+%                                                                              %
+% This program produces a document.                                            %
+%                                                                              %
+% copyright (C) 2016 William Breaden Madden                                    %
+%                                                                              %
+% This software is released under the terms of the GNU General Public License  %
+% version 3 (GPLv3).                                                           %
+%                                                                              %
+% This program is free software: you can redistribute it and/or modify it      %
+% under the terms of the GNU General Public License as published by the Free   %
+% Software Foundation, either version 3 of the License, or (at your option)    %
+% any later version.                                                           %
+%                                                                              %
+% This program is distributed in the hope that it will be useful, but WITHOUT  %
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or        %
+% FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for    %
+% more details.                                                                %
+%                                                                              %
+% For a copy of the GNU General Public License, see                            %
+% <http://www.gnu.org/licenses/>.                                              %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[tikz]{standalone}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+%Defines we can define a new biggness of parenthesis, \vast and \Vast for better } X jet labelling
+\usepackage{mathtools}
+\makeatletter
+\newcommand{\vast}{\bBigg@{4}}
+\newcommand{\Vast}{\bBigg@{5}}
+\makeatother
+
+\begin{document}
+\begin{tikzpicture} %feynman separate from tikz picture so we can add nodes and labels on top
+
+    %Creates a simple cone for use as a jet - Jonathon Jamieson. 
+	\tikzset{ pics/varjet/.style args={#1#2#3#4}{
+        code={
+           \draw [fill=#1!60, dashed,join=round,opacity=#4](0, 0) -- (#2, -#3) .. controls (0.8*#2,-0.9*#3) and (0.8*#2,0.9*#3) .. (#2,#3)  --cycle ;
+           \draw [fill=#1!60, dashed, opacity=#4](#2, 0) ellipse (0.15*#2 and #3); %adds elipse
+           	 }    
+   			}  }
+          
+    \begin{feynman}
+    
+       %Define all of the vertex locations first then join them together with Feynman lines after the fact
+       % Can also define symbols at vertices for initial and final particles, labels in the middle of lines need to be added
+       % when vertices are joined using \diagram*
+    
+    
+    
+    %Top left proton -interaction vertex
+        \vertex (p1) {\({p}\)}; %define initial vertex, all other vertex locations are defined relative to this, label vertex with 'p' for proton
+        \vertex[right=1.5cm of p1] (int1); %make a vertex called int1 that is 1.5cm to the right of p1
+        \vertex[above right=0.1cm and 1.5cm of p1] (jet1);
+        \vertex[above right=0.9cm and 1.35cm of jet1] (jet2);
+        \vertex[above right=1cm and 1.5cm of int1] (jet3);
+     
+     %Bottom left proton - interaction vertex   
+        \vertex[below=1.5cm of p1] (p1b) {\({p}\)};
+        \vertex[below=1.5cm of int1] (int1b);
+        \vertex[below right=0.1cm and 1.5cm of p1b] (jet1b);
+        \vertex[below right=0.9cm and 1.35cm of jet1b] (jet2b);
+        \vertex[below right=1cm and 1.5cm of int1b] (jet3b);
+        
+      %Quark-Quark-VectorBoson vertex
+        \vertex[below right=0.75cm and 2cm of int1] (qqV);
+        
+      %VectorBoson-VectorBoson-Higgs vertex
+        \vertex[right=1.5cm of qqV] (VVH);
+        
+      %Top right VectorBoson-fermion-fermion vertex
+      	\vertex[above right=1cm and 1.5cm of VVH] (Vff);
+	    \vertex[above right=0.5cm and 1.8cm of Vff] (f1) {\(l,\bar{l}|l\)};
+	    \vertex[below right=0.2cm and 1.8cm of Vff] (f2) {\(\nu_{l},\bar{\nu_{l}}|\bar{l}\)};
+	
+      %Bottom right Higgs-b-b vertex
+		\vertex[below right=1cm and 1.5cm of VVH] (Hbb);
+		\vertex[above right=0.4cm and 2cm of Hbb] (b1) {\({b}\)};
+		\vertex[below right=0.4cm and 2cm of Hbb] (b2) {\({\bar{b}}\)};
+	
+	      
+%Join the vertices up and add particle labels
+       
+        \diagram*{
+        % ' in edge label' determines which side of edge label appears on
+        % without specifying propagator type just draws a straight line between vertices
+        
+          %Top left proton -interaction vertex
+            (p1)   -- [fermion] (int1)
+            (int1) -- [fermion, edge label'=\({q}\)] (qqV) 
+            (jet1) -- (jet2) 
+            (int1) -- (jet3)
+            
+          %Bottom left proton -interaction vertex
+            (p1b) -- [fermion] (int1b)
+            (int1b) -- [fermion, edge label'=\(\bar{q}\)] (qqV)
+            (jet1b) -- (jet2b)
+            (int1b) -- (jet3b)
+            
+          %Quark-Quark-VectorBoson vertex
+            (qqV) -- [boson, edge label'=\({W^{*}|Z^{*}}\)] (VVH)
+            
+          %Top right VectorBoson-fermion-fermion vertex
+             (VVH) -- [boson, edge label=\({W|Z}\)] (Vff)
+             (Vff) -- [fermion] (f1)
+             (Vff) -- [fermion] (f2)
+             
+          %Bottom right Higgs-b-b vertex
+             (VVH) -- [scalar, edge label'=\({H}\)] (Hbb)
+
+% can use these commands for curved lines
+%            (d1) -- [half right, looseness=10.5] (x1)
+
+        };
+    \end{feynman}
+    
+    %Can draw nodes and labels separate from feynman for extra labels and proton circles
+    \node at (1.5, 0) [circle, minimum size=0.5cm, fill=red!90]{};
+    \node at (1.5, -1.5) [circle, minimum size=0.5cm, fill=red!90]{};
+    
+    % Adds a simple cones of colour to a specific place.
+    %\filldraw[fill=cyan, draw=blue] (6.5,-1.75) -- (7.67,-1.30) arc (30:75:6mm) -- (6.5,-1.75);
+    %\filldraw[fill=cyan, draw=blue] (6.5,-1.75) -- (7.55,-2.25) arc (10:-30:6mm) -- (6.5,-1.75);
+    
+    %Adds a fancier conic cone to a specific place
+    \path (6.5,-1.75) pic [rotate=20]{varjet={cyan}{1.80}{0.3}{0.6}};
+    \path (6.5,-1.75) pic [rotate=-20]{varjet={cyan}{1.80}{0.3}{0.6}};
+        
+% Example of how to use vast to get a nice jet label
+%    \node[label={$\vast \} X + D \ meson$}] at (5.3, -3.7) {};
+\end{tikzpicture}
+\end{document}

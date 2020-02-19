@@ -1,0 +1,153 @@
+
+\documentclass[12pt,titlepage,oneside]{book}
+%------------------------------Package Includes in alphabetical order
+\usepackage{adjustbox} %Allows for the creation of boxes that can be sized independently
+
+\usepackage{amsmath, amssymb, amsthm}% For mathematical Symbols
+\usepackage{fancyhdr} % Puts headers and footers into the document
+\usepackage{feynmp, feynmp-auto} % Allows for use of Feynmann diagram environments
+\usepackage[font={small,it}]{caption} %Allows for small captions with an italicised font
+\usepackage{gensymb} %For use of \degree.
+\usepackage[top=2.5cm, bottom=1.8cm,left=4.0cm,right=1.5cm]{geometry} % Alters the margins. % These margins are the university guidelines
+\usepackage{graphicx} % Standard package for importing graphics files
+\usepackage[hidelinks]{hyperref} % All refernces will jump to place they are declared. Hyperrefs will be the color of the text.
+\usepackage[version=4]{mhchem} % Allows correct index notation for chemical elements
+\usepackage{setspace}  % [onehalfspacing] gives one-and-a-half line spacing. Doublespacing is another option and can be changed in the text (\doublespacing)
+\usepackage{subfig} % Allows for manipulation of sub-figures
+\usepackage{tabu} %Allows for greater table edition flexibility.
+\usepackage{xcolor}
+
+%-------------------------------Stylistic Choices
+\newcommand{\tcr}[1]{\textcolor{red}{#1}} % Note to self
+\newcommand{\tcg}[1]{\textcolor{green}{#1}} % To be moved to a different section
+\newcommand{\tcc}[1]{\textcolor{cyan}{#1}} % Things to expand upon
+
+\newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
+
+%greek letters
+\newcommand{\etam}{$\eta$ }
+\newcommand{\phim}{$\phi$ }
+\newcommand{\sigmam}{$\sigma$ }
+\newcommand{\thetam}{$\theta$ }
+\newcommand{\chisquared}{$\chi^2$ }
+
+%Variable definitions
+\newcommand{\pt}{\ensuremath{p_{\text{T}}} }
+\newcommand{\ptv}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum 
+\newcommand{\ptz}{\ensuremath{p_{\text{T}}^{Z}} }                      %Z boson transverse momentum 
+\newcommand{\ptw}{\ensuremath{p_{\text{T}}^{W}} }                      %W boson transverse momentum 
+\newcommand{\met}{\ensuremath{E_{\text{T}}^{\text{miss}}} }            %missing transverse energy (following 
+\newcommand{\mpt}{\ensuremath{E_{\text{T,~trk}}^{\text{miss}}} }       %track-based missing transverse energy 
+\newcommand{\mJ}{\ensuremath{m_{\text{J}}} }                           %large-R jet  mass 
+\newcommand{\mll}{\ensuremath{m_{ll}} }                                %di-lepton  mass 
+
+
+%Analyses and Regions
+\newcommand{\Hbb}{\ensuremath{H \to b\bar{b}} }                        %Hbb
+\newcommand{\VHbb}{\ensuremath{VH, H\to b\bar{b}} }                    %VHbb
+\newcommand{\ttbar}{\ensuremath{t\bar{t}} }                            %ttbar
+
+\newcommand{\medPTV}{\ensuremath{75~\GeV \leq \pTV < 150~\GeV} }       %medium PTV region
+\newcommand{\highPTV}{\ensuremath{150~\GeV \leq \pTV < 250~\GeV} }     %high PTV region
+\newcommand{\extremePTV}{\ensuremath{\pTV \ge 250~\GeV} }              %extreme purity PTV region
+\newcommand{\immensePTV}{\ensuremath{250~\GeV \leq \pTV < 400~\GeV} }    %immense purity PTV region
+\newcommand{\utmostPTV}{\ensuremath{\pTV \ge 400~\GeV} }                 %utmost purity PTV region
+
+% VHbb channels                                                                                                                            
+\newcommand{\zlep}{\ensuremath{0}-lepton }
+\newcommand{\olep}{\ensuremath{1}-lepton }
+\newcommand{\tlep}{\ensuremath{2}-lepton }
+
+\newcommand{\ifb}{fb\ensuremath{^{-1}} }                               % integrated luminosity
+\newcommand{\lumi}{\ensuremath{139} fb\ensuremath{^{-1}} }             % physics integrated luminosity at ATLAS
+
+
+\setlength{\parindent}{0pt} % No indents
+
+\begin{document}% Starts the Document
+%--------------------------------------------------------------------------------TITLE PAGE
+	\begin{center} %Centres the items that follow
+	\includegraphics[width=0.7\textwidth]{ExperPartPhys_colour.pdf}~\\[4mm]%Inserts University Logo
+	School of Physics and Astronomy\\
+	University of Glasgow\\
+	Glasgow\\
+	G12 8QQ\\[4mm] %Adds the postcode of the uni and then a 4mm gap.
+
+	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
+
+	{\Huge \textbf{VHbb: A Story}}
+	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
+	{\Huge A Study of The Associated Production of the Higgs Boson with a Vector Boson with the Run II dataset from the ATLAS experiment at CERN.\\[1cm] Fake Rate Studies}\\[2cm] %Title
+	{\LARGE Dwayne Isaac Patrick Laurence \textsc{Spiteri}}\\[1cm] %Author
+	{\small \today}\\[1cm] %Date
+	{\small 
+		Submitted in fulfilment of the requirements for the\\
+		Degree of Doctor of Philosophy}\\[1cm] %Word Count
+	\rule[0.4cm]{15cm}{.2pt} 
+	\end{center}
+
+
+\frontmatter  % Turn off chapter numbering, use roman page numbers
+
+\chapter{Abstract}
+	\noindent {\small This thesis describes the main body of work conducted in the ATLAS experiment, including, my work in physics analysis of \VHbb and my work in Fake rates for Tracking CP.}
+
+\chapter{Acknowledgements}
+\doublespacing
+
+
+\chapter{Declaration}
+I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer
+
+\singlespacing
+\tableofcontents
+\listoffigures
+\listoftables
+\doublespacing
+
+\mainmatter % Turn on chapter numbering, reset page numbers, use arabic
+
+\chapter{Introduction}
+\label{chap:intro}
+\input{Introduction/Introduction.tex}
+
+\chapter{Theory}
+\label{chap:theory}
+\input{Theory/Theory.tex}
+
+\chapter{CERN and The LHC}
+\label{chap:CERNLHC}
+\input{LHC/LHC.tex}
+
+\chapter{The ATLAS Detector}
+\label{chap:ATLAS}
+\input{ATLAS/ATLAS.tex}
+
+\chapter{Fake Tracks in the ATLAS Detector}
+\label{chap:FakeTracks}
+\input{FakeTracks/FakeTracks.tex}
+
+\chapter{Object Selection}
+\label{chap:ObjSel}
+\input{ObjectSelection/ObjectSelection.tex}
+
+\chapter{An overview of the VHbb Analyses}
+\label{chap:Analyses}
+\input{TheAnalyses/TheAnalyses.tex}
+
+\chapter{Statistics, Fits and Significances}
+\label{chap:Statfits}
+\input{StatFits/StatFits.tex}
+
+\chapter{Making an Impact}
+\label{chap:METTriggerStudy}
+\input{TriggerStudy/TriggerStudy.tex}
+
+\chapter{Conclusion}
+\label{chap:conc}
+\input{Conclusion/Conclusion.tex}
+
+\backmatter  % Turn off chapter numbering
+\bibliographystyle{ieeetr}
+\bibliography{Thesis}
+\end{document}
