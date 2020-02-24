@@ -24,6 +24,10 @@
 
 \newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
 
+%Things I am sick to death of writing all the time.
+\newcommand{\MC}{MC simulations } 
+\newcommand{\MCed}{MC simulated events }
+
 %greek letters
 \newcommand{\etam}{$\eta$ }
 \newcommand{\phim}{$\phi$ }
@@ -47,11 +51,11 @@
 \newcommand{\VHbb}{\ensuremath{VH, H\to b\bar{b}} }                    %VHbb
 \newcommand{\ttbar}{\ensuremath{t\bar{t}} }                            %ttbar
 
-\newcommand{\medPTV}{\ensuremath{75~\GeV \leq \pTV < 150~\GeV} }       %medium PTV region
-\newcommand{\highPTV}{\ensuremath{150~\GeV \leq \pTV < 250~\GeV} }     %high PTV region
-\newcommand{\extremePTV}{\ensuremath{\pTV \ge 250~\GeV} }              %extreme purity PTV region
-\newcommand{\immensePTV}{\ensuremath{250~\GeV \leq \pTV < 400~\GeV} }    %immense purity PTV region
-\newcommand{\utmostPTV}{\ensuremath{\pTV \ge 400~\GeV} }                 %utmost purity PTV region
+\newcommand{\medPTV}{\ensuremath{75~GeV $\leq$ \ptv $\<$ 150~GeV} }         %medium PTV region
+\newcommand{\highPTV}{\ensuremath{150~GeV $\leq$ \ptv $\<$ 250~GeV} }       %high PTV region
+\newcommand{\extremePTV}{\ensuremath{\ptv $\ge$ 250~GeV} }                  %extreme PTV region
+\newcommand{\immensePTV}{\ensuremath{250~GeV $\leq$ \ptv  $\<$ 400~GeV} }     %immense PTV region
+\newcommand{\utmostPTV}{\ensuremath{\ptv $\ge$ 400~GeV} }                     %utmost PTV region
 
 % VHbb channels                                                                                                                            
 \newcommand{\zlep}{\ensuremath{0}-lepton }
@@ -92,6 +96,7 @@
 \chapter{Abstract}
 	\noindent {\small This thesis describes the main body of work conducted in the ATLAS experiment, including, my work in physics analysis of \VHbb and my work in Fake rates for Tracking CP.}
 
+
 \chapter{Acknowledgements}
 \doublespacing
 
@@ -100,9 +105,20 @@
 I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer
 
 \singlespacing
+
+\phantomsection
 \tableofcontents
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
+
 \doublespacing
 
 \mainmatter % Turn on chapter numbering, reset page numbers, use arabic
@@ -139,7 +155,7 @@ I do declare that this is all my own work. Except the parts that I ... \\ Plagia
 \label{chap:Statfits}
 \input{StatFits/StatFits.tex}
 
-\chapter{Making an Impact}
+\chapter{Improving an Analysis}
 \label{chap:METTriggerStudy}
 \input{TriggerStudy/TriggerStudy.tex}
 
