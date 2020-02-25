@@ -25,12 +25,22 @@
 \newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
 
 %Things I am sick to death of writing all the time.
-\newcommand{\MC}{MC simulations } 
-\newcommand{\MCed}{MC simulated events }
+\newcommand{\MC}{MC simulations }
+\newcommand{\MCed}{MC simulated events }                                               
+\newcommand{\W}{W-boson }                                                    
+\newcommand{\Z}{Z-boson }  
+
+%The same thing as above but with no space after it
+\newcommand{\mc}{MC simulations} 
+\newcommand{\mced}{MC simulated events}
+\newcommand{\w}{W-boson}                                                   
+\newcommand{\z}{Z-boson}                                                    
 
 %greek letters
 \newcommand{\etam}{$\eta$ }
 \newcommand{\phim}{$\phi$ }
+\newcommand{\num}{$\nu$ }
+\newcommand{\mum}{$\mu$ }
 \newcommand{\sigmam}{$\sigma$ }
 \newcommand{\thetam}{$\theta$ }
 \newcommand{\chisquared}{$\chi^2$ }
@@ -38,9 +48,11 @@
 %Variable definitions
 \newcommand{\pt}{\ensuremath{p_{\text{T}}} }
 \newcommand{\ptv}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum 
+	\newcommand{\ptvo}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum at the end of a phrase or sentence.
 \newcommand{\ptz}{\ensuremath{p_{\text{T}}^{Z}} }                      %Z boson transverse momentum 
 \newcommand{\ptw}{\ensuremath{p_{\text{T}}^{W}} }                      %W boson transverse momentum 
-\newcommand{\met}{\ensuremath{E_{\text{T}}^{\text{miss}}} }            %missing transverse energy (following 
+\newcommand{\met}{\ensuremath{E_{\text{T}}^{\text{miss}}} }            %missing transverse energy 
+	\newcommand{\meto}{\ensuremath{E_{\text{T}}^{\text{miss}}}}            %missing transverse energy at the end of a phrase or sentence.
 \newcommand{\mpt}{\ensuremath{E_{\text{T,~trk}}^{\text{miss}}} }       %track-based missing transverse energy 
 \newcommand{\mJ}{\ensuremath{m_{\text{J}}} }                           %large-R jet  mass 
 \newcommand{\mll}{\ensuremath{m_{ll}} }                                %di-lepton  mass 
@@ -50,7 +62,6 @@
 \newcommand{\Hbb}{\ensuremath{H \to b\bar{b}} }                        %Hbb
 \newcommand{\VHbb}{\ensuremath{VH, H\to b\bar{b}} }                    %VHbb
 \newcommand{\ttbar}{\ensuremath{t\bar{t}} }                            %ttbar
-
 \newcommand{\medPTV}{\ensuremath{75~GeV $\leq$ \ptv $\<$ 150~GeV} }         %medium PTV region
 \newcommand{\highPTV}{\ensuremath{150~GeV $\leq$ \ptv $\<$ 250~GeV} }       %high PTV region
 \newcommand{\extremePTV}{\ensuremath{\ptv $\ge$ 250~GeV} }                  %extreme PTV region
@@ -79,7 +90,7 @@
 
 	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
 
-	{\Huge \textbf{VHbb: A Story}}
+	{\Huge \textbf{VHbb: A Story Where Nothing Exciting Happens}}
 	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
 	{\Huge A Study of The Associated Production of the Higgs Boson with a Vector Boson with the Run II dataset from the ATLAS experiment at CERN.\\[1cm] Fake Rate Studies}\\[2cm] %Title
 	{\LARGE Dwayne Isaac Patrick Laurence \textsc{Spiteri}}\\[1cm] %Author
@@ -99,7 +110,6 @@
 
 \chapter{Acknowledgements}
 \doublespacing
-
 
 \chapter{Declaration}
 I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer
