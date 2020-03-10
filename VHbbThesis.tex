@@ -13,7 +13,7 @@
 \usepackage[version=4]{mhchem} % Allows correct index notation for chemical elements
 \usepackage{setspace}  % [onehalfspacing] gives one-and-a-half line spacing. Doublespacing is another option and can be changed in the text (\doublespacing)
 \usepackage{rotating} % Allows the addition of sideways figures, caption included.
-\usepackage{subfig} % Allows for manipulation of sub-figures
+\usepackage{subfig} % Allows for manipulation of sub-figures. Cannot be used in conjection with subcaption package.
 \usepackage[table,xcdraw]{xcolor}  %Allows for table edition flexibility and usage of certain colours.
 \usepackage{tabu} %Allows for greater table edition flexibility.
 \usepackage[toc,page]{appendix}% for the appendices.
@@ -34,14 +34,6 @@
 \newcommand{\Ra}{Resolved analysis }
 \newcommand{\Ba}{Boosted analysis }  
 \newcommand{\SM}{Standard Model } 
-%The same thing as above but with no space after it
-\newcommand{\mc}{MC simulations} 
-\newcommand{\mced}{MC simulated events}
-\newcommand{\w}{W-boson}                                                   
-\newcommand{\z}{Z-boson}                                                    
-\newcommand{\ra}{Resolved analysis}
-\newcommand{\ba}{Boosted analysis}  
-\newcommand{\sm}{Standard Model} 
 
 %greek letters
 \newcommand{\etam}{$\eta$ }
@@ -52,7 +44,27 @@
 \newcommand{\thetam}{$\theta$ }
 \newcommand{\chisquared}{$\chi^2$ }
 
-%Variable definitions
+%The same thing as above but with no space after it
+\newcommand{\mc}{MC simulations} 
+\newcommand{\mced}{MC simulated events}
+\newcommand{\w}{W-boson}                                                   
+\newcommand{\z}{Z-boson}                                                    
+\newcommand{\ra}{Resolved analysis}
+\newcommand{\ba}{Boosted analysis}  
+\newcommand{\sm}{Standard Model} 
+
+\newcommand{\etamo}{$\eta$}
+\newcommand{\phimo}{$\phi$}
+\newcommand{\numo}{$\nu$}
+\newcommand{\mumo}{$\mu$}
+\newcommand{\sigmamo}{$\sigma$}
+\newcommand{\thetamo}{$\theta$}
+\newcommand{\chisquaredo}{$\chi^2$}
+
+
+%Variable definitions 
+\newcommand{\dn}{\ensuremath{d_0} }                                    %Transverse impact parameter d_0.           
+	\newcommand{\dno}{\ensuremath{d_0}}                                     %Transverse impact parameter d_0 at the end of a phrase or sentence.      
 \newcommand{\pt}{\ensuremath{p_{\text{T}}} }
 \newcommand{\ptv}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum 
 	\newcommand{\ptvo}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum at the end of a phrase or sentence.
@@ -86,7 +98,9 @@
 \newcommand{\ifb}{fb\ensuremath{^{-1}} }                               % integrated luminosity
 \newcommand{\lumi}{\ensuremath{139} fb\ensuremath{^{-1}} }             % physics integrated luminosity at ATLAS
 \newcommand{\sorb}{\ensuremath{\frac{s}{\sqrt{b}}} }                   % signal over root background
-
+\newcommand{\abs}[1]{\ensuremath{\mid #1\mid} }                        % for absolute value of something
+\newcommand{\range}[3]{\ensuremath{#2 < #1 < #3} }                     % [1] between range of [2] and [3] exclusive
+\newcommand{\rangei}[3]{\ensuremath{#2 \leq #1 \leq #3} }              % [1] between range of [2] and [3] inclusive
 
 \setlength{\parindent}{0pt} % No indents
 \begin{document}% Starts the Document
@@ -121,15 +135,6 @@
 \chapter{Acknowledgements}
 \doublespacing
 
-\tcc{When I was younger, I used to skip over the acknowledgement and foreword sections of books. I found them irrelevant at best and self-indulgent at worst, additional bumf at the beginning of the book to pad it out. Granted oftentimes the words of thanks are only a couple of lines on one page but I glowered at them anyway. I used to treat the book as a monadic text devoid of life outside the paper it was written on, and created in isolation by the author, but this is simply not correct. True, a book cannot exist without the author, but like the raising of a child, is brought into maturity by more than the sole efforts of the primary caregivers. When I grew a little older, and I lost some of the self-important arrogance of my early youth  but especially after reading Kurt Vonnegut's opening chapter for Slaughterhouse 5, I realised that the acknowledgements and forewords give the author an outlet to either contextualise their work to the world as they see it, and/or thank people around them for helping to create the volume one way or another. The general reader, ironically, is not the main intended recipient of these messages, but the author asks that they are witnesses to the authors proclamation of those close to them.}\\ 
-
-\tcc{While the work may not be some Magnum Opus, it carries the heart and soul of the person that set aside a lot of their personal time and resources in turning some abstract entity into a physical reality. In this sense I think it's important that those close to you understand that they are important, and that if nothing else they have had a positive impact in your life. With that, I say definitively that without these people, this document as you see it would not exist.} \\
-
-\tcc{Those important to Physics: Wikipedia, My Analysis teams, My supervisor Aidan, Giuseppe. The department. Pierfrancesco, Otilia, Nick, Matthias. The analysis team. Valerio, Tatsuya, The French Thomas C, Hannah, Luca, Steven, Carlos and to anyone who saw one these badboys before now.} \tcr{Add a link to the appendix with the butterfly plot repo.} \\
-
-\tcc{Those important to me in no particular order:  Members of the Coffee Club: Beans on Roast [The Moth, Steamy, Tablet, Lorry, Don Simon, The Conors, Log, Ethan2ol, Joannah, Slayer, TripleJ]. The peeps in my Particle Physics PhD Year but especially: Eb , DJ Vim, The Two Dans, CERN Friends: Sixty, Egg, Naoron, Ororo, Ven4, Carl.I.Am, The Slab Prince, R2rr. The Catholic Chaplaincy, The people I met at conferences esp Florencia Daneri to whom I apologize for still not having a nickname for. To the maverick thinkers who albeit make bad role models: WD30 and The Dow. To anyone who was in 1-R-13 in 2018. To Housemates: Joseph Briggs (Jojoba) and Konstantin Gisdov (Special K), Anyone who I played Badminton with. Anyone who I played Bridge with. Anyone I played Chess with. To anyone I took money off playing Poker. Anyone who came to one of my board-game nights. Anyone I Bouldered with. To the Ostriches. To my rambunctious immediate family, my pestilential extended family. And finally to those wrongfully imprisoned, peace out Creature.}\\
-
-I will also acknowledge the sacrifices made and that this chosen path is not the easiest to maintain. To those that I have met that have taken time off or dropped out of a doctoral programme due to personal reasons. To those who are struggling but continue resolutely out of sheer stubbornness, and to those just going through a dark patch. If by some strange set of circumstances, those concerned ever read this and are in a bad way, I will always be available for a chat.\\
 
 \chapter{Declaration}
 I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer
