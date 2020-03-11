@@ -2,6 +2,7 @@
 %------------------------------Package Includes in alphabetical order
 \usepackage{adjustbox} %Allows for the creation of boxes that can be sized independently
 \usepackage{amsmath, amssymb, amsthm}% For mathematical Symbols
+\usepackage{bm}% For bold mathematical - especially for titles.
 \usepackage{fancyhdr} % Puts headers and footers into the document
 \usepackage{feynmp, feynmp-auto} % Allows for use of Feynmann diagram environments
 \usepackage[font={small,it}]{caption} %Allows for small captions with an italicised font
@@ -25,6 +26,7 @@
 \newcommand{\tcc}[1]{\textcolor{cyan}{#1}} % Things to expand upon
 
 \newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
+\newcommand{\bmaths}[1]{\ensuremath \bm{#1}} % Bold mathematical expressions.
 
 %Things I am sick to death of writing all the time.
 \newcommand{\MC}{MC simulations }
@@ -134,7 +136,6 @@
 
 \chapter{Acknowledgements}
 \doublespacing
-
 
 \chapter{Declaration}
 I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer
