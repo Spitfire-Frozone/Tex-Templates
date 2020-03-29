@@ -10,7 +10,7 @@
 
 @misc{collab,
 	  author         = {CERN},
-	  title          = "The ATLAS Collaboration",
+	  title          = {The ATLAS Collaboration},
 	  year           = {2020},
 	  note           = {atlas.cern/discover/collaboration (Accessed: 3rd February 2020)},
 }
@@ -244,7 +244,7 @@
       note           = "Extracted from the {Review of Particle Properties}  M.~Aguilar-Benitez {\it et al.} (Particle Data Group), Physical Review {\bf D50}, 1173 (1994)"
 }
 % ---------------------------
-% Technical Design Reports & Letter of Intents 
+% Technical Design Reports, Letter of Intents and Detector Specs.
 % ---------------------------
 @article{LOI,
 	  author         = {\relax The {ATLAS} Collaboration},
@@ -272,6 +272,90 @@
       year           = "1997",
       reportNumber   = "CERN-LHCC-97-16, ATLAS-TDR-4",
       SLACcitation   = "%%CITATION = CERN-LHCC-97-16;%%"
+}
+
+@article{MuonSpec,
+      author         = "Aad, Georges and others",
+      title          = "{Resolution of the ATLAS muon spectrometer monitored
+                        drift tubes in LHC Run 2}",
+      collaboration  = "ATLAS",
+      journal        = "JINST",
+      volume         = "14",
+      year           = "2019",
+      number         = "09",
+      pages          = "P09011",
+      doi            = "10.1088/1748-0221/14/09/P09011",
+      eprint         = "1906.12226",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2019-091",
+      SLACcitation   = "%%CITATION = ARXIV:1906.12226;%%"
+}
+
+@article{MuonSpecCS,
+      author         = "Aad, Georges and others",
+      title          = "{Performance of the ATLAS muon trigger in pp collisions
+                        at $\sqrt{s}=8$ TeV}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C75",
+      year           = "2015",
+      pages          = "120",
+      doi            = "10.1140/epjc/s10052-015-3325-9",
+      eprint         = "1408.3179",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-154",
+      SLACcitation   = "%%CITATION = ARXIV:1408.3179;%%"
+}
+
+@book{MagnetTDR,
+      title         = "{ATLAS magnet system: Technical Design Report, 1}",
+      publisher     = "CERN",
+      collaboration = "ATLAS Collaboration",
+      address       = "Geneva",
+      series        = "Technical Design Report ATLAS",
+      year          = "1997",
+      reportNumber  = "CERN-LHCC-97-018",
+      url           = "http://cds.cern.ch/record/338080",
+}
+
+@book{BarrelToroidTDR,
+      author        = "Badiou, J P and Beltramelli, J and Baze, J M and Belorgey,
+                       J",
+      title         = "{ATLAS barrel toroid: Technical Design Report}",
+      publisher     = "CERN",
+      collaboration = "ATLAS Collaboration",
+      address       = "Geneva",
+      series        = "Technical Design Report ATLAS",
+      year          = "1997",
+      reportNumber  = "CERN-LHCC-97-019",
+      url           = "http://cds.cern.ch/record/331065",
+      note          = "Electronic version not available",
+}
+
+@book{EndcapToroidTDR,
+      title         = "{ATLAS end-cap toroids: Technical Design Report}",
+      publisher     = "CERN",
+      collaboration = "ATLAS Collaboration",
+      address       = "Geneva",
+      series        = "Technical Design Report ATLAS",
+      year          = "1997",
+      reportNumber  = "CERN-LHCC-97-020",
+      url           = "http://cds.cern.ch/record/331066",
+      note          = "Electronic version not available",
+}
+
+@article{ATLASDetInfo2008,
+      author         = "Aad, G. and others",
+      title          = "{The ATLAS Experiment at the CERN Large Hadron Collider}",
+      collaboration  = "ATLAS",
+      journal        = "JINST",
+      volume         = "3",
+      year           = "2008",
+      pages          = "S08003",
+      doi            = "10.1088/1748-0221/3/08/S08003",
+      SLACcitation   = "%%CITATION = JINST,3,S08003;%%"
 }
 
 
@@ -430,14 +514,14 @@
 
 @misc{ATLASRun1Lumi,
       author        	= {\relax  The {ATLAS} Collaboration},
-	  title 		    	= {LuminosityPublicResults},
+	  title 		    	= {Luminosity Public Results},
       year          	= 2013,	  
 	  note          	= {https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResults (Accessed: 18th March 2020)},
 }
 
 @misc{ATLASRun2Lumi,
       author        	= {\relax  The {ATLAS} Collaboration},
-	  title 		    	= {LuminosityPublicResultsRun2},
+	  title 		    	= {Luminosity Public Results Run2},
       year          	= 2019,	  
 	  note          	= {https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResultsRun2 (Accessed: 14th February 2020)},
 }
@@ -497,6 +581,19 @@
       SLACcitation   = "%%CITATION = PPNPD,81,97;%%"
 }
 
+@misc{Bragg,
+  author       = {Bragg, W. H. and
+                  Kleeman, R.},
+  title        = {{XXXIX. On the α particles of radium, and their 
+                   loss of range in passing through various atoms and
+                   molecules}},
+  month        = sep,
+  year         = 1905,
+  publisher    = {Zenodo},
+  doi          = {10.1080/14786440509463378},
+  url          = {https://doi.org/10.1080/14786440509463378}
+}
+
 % ---------------------------
 % TextBooks 
 % ---------------------------
@@ -551,6 +648,16 @@
       publisher      = "Academic Press",
       year           = "1987",
       pages          = "33,57"
+}
+
+@book{Bettini,
+      author         = "Bettini, Alessandro",
+      title          = "{Introduction to elementary particle physics}",
+      url            = "http://www.cambridge.org/catalogue/catalogue.asp?isbn=9780521880213",
+      journal        = "Cambridge, UK: Univ. Pr. (2008) 431 p",
+      year           = "2008",
+      ISBN           = "9780521880213",
+      SLACcitation   = "%%CITATION = INSPIRE-839696;%%"
 }
 
 % ---------------------------
@@ -639,6 +746,16 @@
       reportNumber  = "CERN-GE-0803014",
       url           = "https://cds.cern.ch/record/1095926",
 }
+
+@misc{ECAL,
+      author        = {\relax The ATLAS Collaboration},
+      title         = "{Public Liquid-Argon Calorimeter Plots on Detector Status}",
+      year          = "2019",
+      url           = "https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LArCaloPublicResultsDetStatus",
+}
+
+
+
 
 @misc{CERNaccComp,
 	  author         = {Science Learning Hub},
