@@ -4,6 +4,7 @@
 \usepackage{amsmath, amssymb, amsthm, cancel}% For mathematical Symbols
 \usepackage[toc,page]{appendix}% for the appendices.
 \usepackage{bm}% For bold mathematical - especially for titles.
+\usepackage{comment}% Used to comment out large sections of the Thesis.
 \usepackage{fancyhdr} % Puts headers and footers into the document
 \usepackage{feynmp, feynmp-auto} % Allows for use of Feynmann diagram environments
 \usepackage[font={small,it}]{caption} %Allows for small captions with an italicised font
@@ -37,11 +38,13 @@
 \newcommand{\SM}{Standard Model } 
 
 \newcommand{\etam}{$\eta$ }
-\newcommand{\phim}{$\phi$ }
+\newcommand{\lambdam}{$\lambda$ }
 \newcommand{\num}{$\nu$ }
 \newcommand{\mum}{$\mu$ }
+\newcommand{\pim}{$\pi$ }
 \newcommand{\sigmam}{$\sigma$ }
 \newcommand{\thetam}{$\theta$ }
+\newcommand{\phim}{$\phi$ }
 \newcommand{\chisquared}{$\chi^2$ }
 
 % --- The same thing as above but with no space after it
@@ -54,11 +57,13 @@
 \newcommand{\sm}{Standard Model} 
 
 \newcommand{\etamo}{$\eta$}
-\newcommand{\phimo}{$\phi$}
+\newcommand{\lambdamo}{$\lambda$}
 \newcommand{\numo}{$\nu$}
 \newcommand{\mumo}{$\mu$}
+\newcommand{\pimo}{$\pi$}
 \newcommand{\sigmamo}{$\sigma$}
 \newcommand{\thetamo}{$\theta$}
+\newcommand{\phimo}{$\phi$}
 \newcommand{\chisquaredo}{$\chi^2$}
 
 % --- Things for Quantum mechanics easier without relying on new packages.
@@ -175,9 +180,10 @@
 \doublespacing
 
 
-
 \chapter{Declaration}
-I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer
+I do declare that this is all my own work. Except the parts that I ... \\ Plagiarised, let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise only be sure to always call it please: `research' - Tom Lehrer\\
+
+I see no good reasons why the views given in this volume should shock the religious feelings of any one - Charles Darwin: On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life 6th Edition
 
 \singlespacing
 
@@ -199,6 +205,7 @@ I do declare that this is all my own work. Except the parts that I ... \\ Plagia
 \mainmatter % Turn on chapter numbering, reset page numbers, use arabic
 \linenumbers % To be commented out in the final draft.
 
+%\begin{comment}
 \part[High Energy Physics Background]{
 \pgfornament[width=10cm]{69}\\[4mm]
 High Energy Physics Background \\
@@ -227,7 +234,7 @@ High Energy Physics Background \\
 	\chapter{CERN and The LHC}
 	\label{chap:CERNLHC}
 	\input{LHC/LHC.tex}
-
+%\end{comment}
 \part[The ATLAS Experiment]{
 \pgfornament[width=10cm]{69}\\[4mm]
 The ATLAS Experiment \\
@@ -235,10 +242,12 @@ The ATLAS Experiment \\
 \begin{flushleft}
 	\normalfont
 	\small 
-	``He had high hopes for it this time; he had followed all the instructions on plug changing on page 5 of \tit{A Boy's Own Book Of Practical Electronics, Including A Hundred and One Safe and Educational Things to Do With Electricity}. He had attached the correct coloured wires to the correct pins; he'd checked that it was the right amperage fuse; he'd screwed it all back together; So far, no problems. He plugged it into the socket. Then he switched the socket on.\\[4mm] 
-	Every light in the house went out.\\ 
-	Newton beamed with pride. He was getting better."\\ 
-	\hspace*{\fill} - T.Prachett \& N.Gaiman, \tit{Good Omens}
+	%``He had high hopes for it this time; he had followed all the instructions on plug changing on page 5 of \tit{A Boy's Own Book Of Practical Electronics, Including A Hundred and One Safe and Educational Things to Do With Electricity}. He had attached the correct coloured wires to the correct pins; he'd checked that it was the right amperage fuse; he'd screwed it all back together; So far, no problems. He plugged it into the socket. Then he switched the socket on.\\[4mm] 
+	%Every light in the house went out.\\ 
+	%Newton beamed with pride. He was getting better."\\ 
+	%\hspace*{\fill} - T.Prachett \& N.Gaiman, \tit{Good Omens}
+	Where a computer on the ENIAC is equipped with 18,000 vacuum tubes and weighs 30 tons, machines in the future may have only 1,000 vacuum tubes and weigh only 1.5 tons. \\
+	\hspace*{\fill} - Popular Mechanics, March 1949
 \end{flushleft}
 \begin{figure}[h!]
 		\includegraphics[width=\textwidth]{ATLAS-Banner.jpg}~\\[4mm]
@@ -250,7 +259,7 @@ The ATLAS Experiment \\
 	\chapter{The ATLAS Detector}
 	\label{chap:ATLAS}
 	\input{ATLAS/ATLAS.tex}
-
+%\begin{comment}
 	\chapter{Fake Tracks in the ATLAS Detector}
 	\label{chap:FakeTracks}
 	\input{FakeTracks/FakeTracks.tex}
@@ -258,7 +267,7 @@ The ATLAS Experiment \\
 	\chapter{Object Selection}
 	\label{chap:ObjSel}
 	\input{ObjectSelection/ObjectSelection.tex}
-
+%\end{comment}
 \part[Physics Analysis]{
 \pgfornament[width=10cm]{69}\\[4mm]
 Physics Analysis \\
@@ -275,7 +284,7 @@ Physics Analysis \\
 ***
 \doublespacing
 }
-
+%\begin{comment}
 	\chapter{An overview of the VHbb Analyses}
 	\label{chap:Analyses}
 	\input{TheAnalyses/TheAnalyses.tex}
@@ -286,6 +295,7 @@ Physics Analysis \\
     
 	\chapter{$\mathbf{E_{T}^{miss}}$ Triggers in the 2-Lepton Analyses}
 	\label{chap:METTriggerStudy}
+	\chaptermark{\met Triggers in the 2-Lepton Analyses}
 	\input{TriggerStudy/TriggerStudy.tex}
 
 \chapter{Conclusion}
@@ -293,18 +303,23 @@ Physics Analysis \\
 \input{Conclusion/Conclusion.tex}
 
 \begin{appendices}
-\chapter{Classical Mechanics: Newtonian to Lagrangian}
-\input{Appendices/Newton2Lagrangian.tex}
+\chapter{The Journey from Newtonian to Lagrangian Mechanics}
 \label{app:C2L}
+\chaptermark{Newtonian to Lagrangian Mechanics}
+\input{Appendices/Newton2Lagrangian.tex}
+
 
 \chapter{Axioms and Consequences of Quantum Mechanics}
 \input{Appendices/QuantumMechanics.tex}
 \label{app:QM}
 
-\chapter{Impact of 2-Lepton Significance on the Total}
-\input{Appendices/RequiredSignificance.tex}
+\chapter{Impact of 2-Lepton Significance Improvements on the Total Significance}
 \label{app:reqsig}
+\chaptermark{2-Lepton Significance Impact on Total}
+\input{Appendices/RequiredSignificance.tex}
+
 \end{appendices}
+%\end{comment}
 
 \backmatter  % Turn off chapter numbering
 \bibliographystyle{ieeetr}
