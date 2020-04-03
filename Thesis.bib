@@ -266,12 +266,57 @@
       url           = "http://cds.cern.ch/record/2257755",
 }
 
-@article{IDTDR,
-      title          = "{ATLAS inner detector: Technical design report. Vol. 1}",
+@book{ATLASDetInfo1997,
+      title         = "{ATLAS inner detector: Technical Design Report, 1}",
+      publisher     = "CERN",
+      collaboration = "ATLAS Collaboration",
+      address       = "Geneva",
+      series        = "Technical Design Report ATLAS",
+      year          = "1997",
+      reportNumber  = "CERN-LHCC-97-016",
+      url           = "https://cds.cern.ch/record/331063",
+}
+
+@article{ATLASDetInfo2008,
+      author         = "Aad, G. and others",
+      title          = "{The ATLAS Experiment at the CERN Large Hadron Collider}",
       collaboration  = "ATLAS",
-      year           = "1997",
-      reportNumber   = "CERN-LHCC-97-16, ATLAS-TDR-4",
-      SLACcitation   = "%%CITATION = CERN-LHCC-97-16;%%"
+      journal        = "JINST",
+      volume         = "3",
+      year           = "2008",
+      pages          = "S08003",
+      doi            = "10.1088/1748-0221/3/08/S08003",
+      SLACcitation   = "%%CITATION = JINST,3,S08003;%%"
+}
+
+@article{ATLASSCTPix2014,
+    author = "Aad, Georges and others",
+    archivePrefix = "arXiv",
+    collaboration = "ATLAS",
+    doi = "10.1088/1748-0221/9/08/P08009",
+    eprint = "1404.7473",
+    journal = "JINST",
+    pages = "P08009",
+    primaryClass = "hep-ex",
+    reportNumber = "CERN-PH-EP-2014-049",
+    title = "{Operation and performance of the ATLAS semiconductor tracker}",
+    volume = "9",
+    year = "2014"
+}
+
+@article{IBL2018,
+    author = "Abbott, B. and others",
+    archivePrefix = "arXiv",
+    collaboration = "ATLAS IBL",
+    doi = "10.1088/1748-0221/13/05/T05008",
+    eprint = "1803.00844",
+    journal = "JINST",
+    number = "05",
+    pages = "T05008",
+    primaryClass = "physics.ins-det",
+    title = "{Production and Integration of the ATLAS Insertable B-Layer}",
+    volume = "13",
+    year = "2018"
 }
 
 @article{MuonSpec,
@@ -346,19 +391,30 @@
       note          = "Electronic version not available",
 }
 
-@article{ATLASDetInfo2008,
-      author         = "Aad, G. and others",
-      title          = "{The ATLAS Experiment at the CERN Large Hadron Collider}",
-      collaboration  = "ATLAS",
-      journal        = "JINST",
-      volume         = "3",
-      year           = "2008",
-      pages          = "S08003",
-      doi            = "10.1088/1748-0221/3/08/S08003",
-      SLACcitation   = "%%CITATION = JINST,3,S08003;%%"
+@techreport{TRTPaper,
+      author        = "Vogel, A",
+      title         = "{ATLAS Transition Radiation Tracker (TRT): Straw Tube
+                       Gaseous Detectors at High Rates}",
+      institution   = "CERN",
+      address       = "Geneva",
+      number        = "ATL-INDET-PROC-2013-005",
+      month         = "Apr",
+      year          = "2013",
+      reportNumber  = "ATL-INDET-PROC-2013-005",
+      url           = "https://cds.cern.ch/record/1537991",
 }
 
-
+@article{ATLASTDAQ,
+    author = "Abolins, M. and others",
+    collaboration = "ATLAS TDAQ",
+    doi = "10.1088/1748-0221/11/06/P06008",
+    journal = "JINST",
+    number = "06",
+    pages = "P06008",
+    title = "{The ATLAS Data Acquisition and High Level Trigger system}",
+    volume = "11",
+    year = "2016"
+}
 % ---------------------------
 % ATLAS Big Papers, Internal Notes and Conf Notes 
 % ---------------------------
@@ -555,7 +611,6 @@
       url           = "https://cds.cern.ch/record/2318500",
 }
 
-
 @techreport{CERNIncident,
       author        = "CERN",
       title         = "{Interim Summary Report on the Analysis of the 19 September 2008 Indicent at the LHC}",
@@ -582,16 +637,39 @@
 }
 
 @misc{Bragg,
-  author       = {Bragg, W. H. and
-                  Kleeman, R.},
-  title        = {{XXXIX. On the α particles of radium, and their 
+  	  author       = {Bragg, W. H. and Kleeman, R.},
+  	  title        = {{XXXIX. On the α particles of radium, and their 
                    loss of range in passing through various atoms and
                    molecules}},
-  month        = sep,
-  year         = 1905,
-  publisher    = {Zenodo},
-  doi          = {10.1080/14786440509463378},
-  url          = {https://doi.org/10.1080/14786440509463378}
+  	  month        = sep,
+  	  year         = 1905,
+ 	  publisher    = {Zenodo},
+ 	  doi          = {10.1080/14786440509463378},
+ 	  url          = {https://doi.org/10.1080/14786440509463378}
+}
+
+@misc{TRT,
+  	  author       = {Yaun, C. L. L.},
+  	  title        = {{Some New Developments On Transition Radiation Detectors
+for High-Energy Particles }},
+  	  month        = oct,
+      year         = 1974,
+    	  journal      = {FERMILAB-CONF-75-111-E},
+  	  doi          = {10.1080/14786440509463378},
+  	  url          = {https://lss.fnal.gov/archive/1975/conf/fermilab-conf-75-111-e.pdf}
+}
+
+@techreport{FuckingTaus,
+      title         = "{Identification of hadronic tau lepton decays using neural
+                       networks in the ATLAS experiment}",
+      institution   = "CERN",
+      collaboration = "ATLAS Collaboration",
+      address       = "Geneva",
+      number        = "ATL-PHYS-PUB-2019-033",
+      month         = "Aug",
+      year          = "2019",
+      reportNumber  = "ATL-PHYS-PUB-2019-033",
+      url           = "https://cds.cern.ch/record/2688062",
 }
 
 % ---------------------------
@@ -658,6 +736,17 @@
       year           = "2008",
       ISBN           = "9780521880213",
       SLACcitation   = "%%CITATION = INSPIRE-839696;%%"
+}
+
+@book{Spieler,
+    author = "Spieler, Helmuth",
+    address = "Oxford",
+    isbn = "978-0-19-852784-8",
+    publisher = "Oxford University Press",
+    series = "Semiconductor Science and Technology",
+    title = "{Semiconductor Detector Systems}",
+    volume = "v.12",
+    year = "2005"
 }
 
 % ---------------------------
@@ -754,9 +843,6 @@
       url           = "https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LArCaloPublicResultsDetStatus",
 }
 
-
-
-
 @misc{CERNaccComp,
 	  author         = {Science Learning Hub},
 	  title          = {Particle physics research},
@@ -776,4 +862,12 @@
 	  title          = "Index of images",
 	  year           = {2012},
 	  note           = {http://rd.kek.jp/images/SOI\_.jpg (Accessed: 22rd February 2020)},
+}
+
+
+@misc{DuPont,
+	  author         = {\relax DuPont de Nemours Inc},
+	  title          = "Kapton® Polyimide films",
+	  year           = {2020},
+	  note           = {https://www.dupont.com/electronic-materials/kapton-polyimide-film.html (Accessed: 29th March 2020)},
 }
