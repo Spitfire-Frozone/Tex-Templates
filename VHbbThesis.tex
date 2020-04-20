@@ -1,7 +1,13 @@
-\documentclass[12pt,titlepage,oneside,table,xcdraw]{book}
-%------------------------------Package Includes in alphabetical order
+\documentclass[12pt,titlepage,oneside]{book}
+%________________________________________________________________________________
+%------------------------------Package Includes in alphabetical order.
+
+%Except for overall styles which typically clash with a lot of packages and are thus done after the commands.
+%________________________________________________________________________________
 \usepackage{adjustbox} %Allows for the creation of boxes that can be sized independently
 \usepackage{amsmath, amssymb, amsthm, cancel}% For mathematical Symbols
+\usepackage[backend=biber,style=numeric-comp,bibencoding=ascii]{biblatex} %like ieee(tr) sytle but with clickable doi links. 
+	\addbibresource{Thesis.bib}
 \usepackage[toc,page]{appendix}% for the appendices.
 \usepackage{bm}% For bold mathematical - especially for titles.
 \usepackage{comment}% Used to comment out large sections of the Thesis.
@@ -11,17 +17,18 @@
 \usepackage{gensymb} %For use of \degree.
 \usepackage[top=2.5cm, bottom=1.8cm,left=4.0cm,right=1.5cm]{geometry} % Alters the margins. % These margins are the university guidelines
 \usepackage{graphicx} % Standard package for importing graphics files
-\usepackage[hidelinks]{hyperref} % All references will jump to place they are declared. Hyperrefs will be the color of the text.
 \usepackage{lineno} % For line numbers when i'm writing drafts
 \usepackage[version=4]{mhchem} % Allows correct index notation for chemical elements
-\usepackage{pgfornament} % Addition of glyphs for page decoration
 \usepackage{setspace}  % [onehalfspacing] gives one-and-a-half line spacing. Doublespacing is another option and can be changed in the text (\doublespacing)
 \usepackage{rotating} % Allows the addition of sideways figures, caption included.
 \usepackage{subfig} % Allows for manipulation of sub-figures. Cannot be used in conjection with subcaption package.
 \usepackage{tabu} %Allows for greater table edition flexibility.
-\usepackage{xcolor}  %Allows for usage of certain colours. The table edition flexibility [table,xcdraw now global options due to clash with package pgfornament].
-
+\usepackage[dvipsnames,table,xcdraw]{xcolor}  %Allows for usage of certain colours. The table edition flexibility  now global options due to clash with package pgfornament].
+\usepackage{url} % T stop very long links in the references running off the page
+	\def\UrlBreaks{\do\/\do-}
+%________________________________________________________________________________
 %------------------------------- Commands
+%________________________________________________________________________________
 \newcommand{\tcr}[1]{\textcolor{red}{#1}} % Note to self
 \newcommand{\tcg}[1]{\textcolor{green}{#1}} % To be moved to a different section
 \newcommand{\tcc}[1]{\textcolor{cyan}{#1}} % Things to expand upon
@@ -113,7 +120,19 @@
 \newcommand{\range}[3]{\ensuremath{#2 < #1 < #3} }                     % [1] between range of [2] and [3] exclusive
 \newcommand{\rangei}[3]{\ensuremath{#2 \leq #1 \leq #3} }              % [1] between range of [2] and [3] inclusive
 
+%________________________________________________________________________________
 %---------------------------------- Style Edits
+%________________________________________________________________________________
+
+\usepackage[hidelinks]{hyperref} % All references will jump to place they are declared. Hyperrefs will be the color of the text unless changed by \hypersetup.
+	\hypersetup{
+    	colorlinks = true,
+    	linkcolor  = black,   
+    	citecolor  = black,   
+    	urlcolor   = WildStrawberry,
+		}
+\usepackage{pgfornament} % Addition of glyphs for page decoration
+
 
 % Adds in a box with the chapter number in it
 \usepackage{calc,soul}  
@@ -149,8 +168,12 @@
  
 \setlength{\parindent}{0pt} % No indents
 
+%________________________________________________________________________________
+%________________________________________________________________________________
+%________________________________________________________________________________
+
 \begin{document}% Starts the Document
-%--------------------------------------------------------------------------------TITLE PAGE
+
 	\begin{center} %Centres the items that follow
 	\includegraphics[width=0.7\textwidth]{ExperPartPhys_colour.pdf}~\\[4mm]%Inserts University Logo
 	School of Physics and Astronomy\\
@@ -207,7 +230,6 @@ I see no good reasons why the views given in this volume should shock the religi
 \mainmatter % Turn on chapter numbering, reset page numbers, use arabic
 \linenumbers % To be commented out in the final draft.
 
-%\begin{comment}
 \part[High Energy Physics Background]{
 \pgfornament[width=10cm]{69}\\[4mm]
 High Energy Physics Background \\
@@ -225,18 +247,19 @@ High Energy Physics Background \\
 *
 \doublespacing
 }
+%\begin{comment}
 	\chapter{Introduction}
 	\label{chap:intro}
 	\input{Introduction/Introduction.tex}
-
+%\end{comment}
 	\chapter{Standard Model Theory}
 	\label{chap:theory}
 	\input{Theory/Theory.tex}
-
+%\begin{comment}
 	\chapter{CERN and The LHC}
 	\label{chap:CERNLHC}
 	\input{LHC/LHC.tex}
-%\end{comment}
+
 \part[The ATLAS Experiment]{
 \pgfornament[width=10cm]{69}\\[4mm]
 The ATLAS Experiment \\
@@ -261,7 +284,7 @@ The ATLAS Experiment \\
 	\chapter{The ATLAS Detector}
 	\label{chap:ATLAS}
 	\input{ATLAS/ATLAS.tex}
-%\begin{comment}
+
 	\chapter{Fake Tracks in the ATLAS Detector}
 	\label{chap:FakeTracks}
 	\input{FakeTracks/FakeTracks.tex}
@@ -269,7 +292,7 @@ The ATLAS Experiment \\
 	\chapter{Object Selection}
 	\label{chap:ObjSel}
 	\input{ObjectSelection/ObjectSelection.tex}
-%\end{comment}
+
 \part[Physics Analysis]{
 \pgfornament[width=10cm]{69}\\[4mm]
 Physics Analysis \\
@@ -286,7 +309,7 @@ Physics Analysis \\
 ***
 \doublespacing
 }
-%\begin{comment}
+
 	\chapter{An overview of the VHbb Analyses}
 	\label{chap:Analyses}
 	\input{TheAnalyses/TheAnalyses.tex}
@@ -300,20 +323,26 @@ Physics Analysis \\
 	\chaptermark{\met Triggers in the 2-Lepton Analyses}
 	\input{TriggerStudy/TriggerStudy.tex}
 
+
 \chapter{Conclusion}
 \label{chap:conc}
 \input{Conclusion/Conclusion.tex}
-
+%\end{comment}
+%\begin{comment}
 \begin{appendices}
 \chapter{The Journey from Newtonian to Lagrangian Mechanics}
 \label{app:C2L}
 \chaptermark{Newtonian to Lagrangian Mechanics}
 \input{Appendices/Newton2Lagrangian.tex}
 
-
-\chapter{Axioms and Consequences of Quantum Mechanics}
-\input{Appendices/QuantumMechanics.tex}
+\chapter{Axioms of Quantum Mechanics and their Consequences}
 \label{app:QM}
+\chaptermark{Axioms and Consequences of Quantum Mechanics}
+\input{Appendices/QuantumMechanics.tex}
+
+\chapter{Some Bits and Bobs on Group Theory}
+\label{app:GT}
+\input{Appendices/GroupTheory.tex}
 
 \chapter{Impact of 2-Lepton Significance Improvements on the Total Significance}
 \label{app:reqsig}
@@ -322,9 +351,13 @@ Physics Analysis \\
 
 \end{appendices}
 %\end{comment}
-
 \backmatter  % Turn off chapter numbering
-\bibliographystyle{ieeetr}
-\bibliography{Thesis}
+
+% Bibliography
+\printbibliography
+
 * Banner image for part headings from https://atlasvirtualvisit.web.cern.ch/
 \end{document}
+%________________________________________________________________________________
+%________________________________________________________________________________
+%________________________________________________________________________________
