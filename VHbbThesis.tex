@@ -21,17 +21,32 @@
 \usepackage[version=4]{mhchem} % Allows correct index notation for chemical elements
 \usepackage{setspace}  % [onehalfspacing] gives one-and-a-half line spacing. Doublespacing is another option and can be changed in the text (\doublespacing)
 \usepackage{rotating} % Allows the addition of sideways figures, caption included.
+\usepackage{slashed} % For Feynmann slash notation.
 \usepackage{subfig} % Allows for manipulation of sub-figures. Cannot be used in conjection with subcaption package.
 \usepackage{tabu} %Allows for greater table edition flexibility.
 \usepackage[dvipsnames,table,xcdraw]{xcolor}  %Allows for usage of certain colours. The table edition flexibility  now global options due to clash with package pgfornament].
-\usepackage{url} % T stop very long links in the references running off the page
+\usepackage{url} % To stop very long links in the references running off the page
 	\def\UrlBreaks{\do\/\do-}
 %________________________________________________________________________________
 %------------------------------- Commands
 %________________________________________________________________________________
-\newcommand{\tcr}[1]{\textcolor{red}{#1}} % Note to self
-\newcommand{\tcg}[1]{\textcolor{green}{#1}} % To be moved to a different section
-\newcommand{\tcc}[1]{\textcolor{cyan}{#1}} % Things to expand upon
+	\definecolor{BLOODRED}{RGB}{200,20,20}
+	\definecolor{GRASSGREEN}{RGB}{20,200,20}
+	\definecolor{CERULEAN}{RGB}{20,100,200}	
+	\definecolor{MUSTARD}{RGB}{200,200,0}
+	
+\newcommand{\tcr}[1]{\textcolor{BLOODRED}{#1}} % RED highlight: Note to self
+\newcommand{\tcg}[1]{\textcolor{GRASSGREEN}{#1}} % GREEN highlight: To be moved to a different section
+\newcommand{\tcc}[1]{\textcolor{CERULEAN}{#1}} % BLUE highlight: things to expand upon
+
+\newcommand{\fchard}[4]{\textcolor{BLOODRED}{#1}\textcolor{GRASSGREEN}{#2}\textcolor{CERULEAN}{#3}\textcolor{MUSTARD}{#4}} % 4 colours that look nice together
+
+	\definecolor{DANORANGE}{RGB}{239,100,97}
+	\definecolor{DANGREEN}{RGB}{121,180,115}
+	\definecolor{DANBLUE}{RGB}{41,115,115}
+	\definecolor{DANPURPLE}{RGB}{113,62,90}
+	
+\newcommand{\fcsoft}[4]{\textcolor{DANORANGE}{#1}\textcolor{DANGREEN}{#2}\textcolor{DANBLUE}{#3}\textcolor{DANPURPLE}{#4}} % 4 colours that look nice together
 
 \newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
 
@@ -44,6 +59,7 @@
 \newcommand{\Ba}{Boosted analysis }  
 \newcommand{\SM}{Standard Model } 
 
+\newcommand{\gammam}{$\gamma$ }
 \newcommand{\etam}{$\eta$ }
 \newcommand{\lambdam}{$\lambda$ }
 \newcommand{\num}{$\nu$ }
@@ -64,6 +80,7 @@
 \newcommand{\ba}{Boosted analysis}  
 \newcommand{\sm}{Standard Model} 
 
+\newcommand{\gammamo}{$\gamma$}
 \newcommand{\etamo}{$\eta$}
 \newcommand{\lambdamo}{$\lambda$}
 \newcommand{\numo}{$\nu$}
@@ -95,7 +112,7 @@
 \newcommand{\mJ}{\ensuremath{m_{\text{J}}} }                           %large-R jet  mass 
 \newcommand{\mll}{\ensuremath{m_{ll}} }                                %di-lepton  mass 
 \newcommand{\gev}{\ensuremath{~GeV }}								 %Units of energy
-	\newcommand{\gevo}{\ensuremath{~GeV}}								  %Units of energy at the end og a phrase or sentence
+	\newcommand{\gevo}{\ensuremath{~GeV}}								  %Units of energy at the end of a phrase or sentence
 	
 % --- VHbb Analyses and Regions
 \newcommand{\zlep}{\ensuremath{0}-lepton }
@@ -203,6 +220,7 @@
 
 %\chapter{Acknowledgements}
 \doublespacing
+
 
 
 \chapter{Declaration}
