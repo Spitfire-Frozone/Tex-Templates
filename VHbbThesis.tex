@@ -1,18 +1,19 @@
 \documentclass[12pt,titlepage,oneside]{book}
-%________________________________________________________________________________
+%________________________________________________________________
 %------------------------------Package Includes in alphabetical order.
 
 %Except for overall styles which typically clash with a lot of packages and are thus done after the commands.
-%________________________________________________________________________________
+%________________________________________________________________
 \usepackage{adjustbox} %Allows for the creation of boxes that can be sized independently
 \usepackage{amsmath, amssymb, amsthm, cancel}% For mathematical Symbols
-\usepackage[backend=biber,style=numeric-comp,bibencoding=ascii]{biblatex} %like ieee(tr) sytle but with clickable doi links. 
+\usepackage[backend=biber,style=numeric-comp,bibencoding=ascii,sorting=none]{biblatex} %like ieee(tr) sytle but with clickable doi links. 
 	\addbibresource{Thesis.bib}
 \usepackage[toc,page]{appendix}% for the appendices.
 \usepackage{bm}% For bold mathematical - especially for titles.
 \usepackage{comment}% Used to comment out large sections of the Thesis.
 \usepackage{fancyhdr} % Puts headers and footers into the document
 \usepackage{feynmp, feynmp-auto} % Allows for use of Feynmann diagram environments
+\usepackage{float} %To allow the setting of a [H] in figure placement
 \usepackage[font={small,it}]{caption} %Allows for small captions with an italicised font
 \usepackage{gensymb} %For use of \degree.
 \usepackage[top=2.5cm, bottom=1.8cm,left=4.0cm,right=1.5cm]{geometry} % Alters the margins. % These margins are the university guidelines
@@ -27,9 +28,9 @@
 \usepackage[dvipsnames,table,xcdraw]{xcolor}  %Allows for usage of certain colours. The table edition flexibility  now global options due to clash with package pgfornament].
 \usepackage{url} % To stop very long links in the references running off the page
 	\def\UrlBreaks{\do\/\do-}
-%________________________________________________________________________________
+%_________________________________________________________________
 %------------------------------- Commands
-%________________________________________________________________________________
+%_________________________________________________________________
 	\definecolor{BLOODRED}{RGB}{200,20,20}
 	\definecolor{GRASSGREEN}{RGB}{20,200,20}
 	\definecolor{CERULEAN}{RGB}{20,100,200}	
@@ -50,6 +51,9 @@
 
 \newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
 
+\newcommand{\bigfrac}[2]{\frac{\displaystyle {#1}}{\displaystyle {#2}}} %make fraction text larger
+
+
 % --- Things I am sick to death of writing all the time.
 \newcommand{\MC}{MC simulations }
 \newcommand{\MCed}{MC simulated events }                                               
@@ -57,19 +61,23 @@
 \newcommand{\Z}{Z-boson }  
 \newcommand{\Ra}{Resolved analysis }
 \newcommand{\Ba}{Boosted analysis }  
+\newcommand{\CBA}{Cut-Based analysis } 
 \newcommand{\SM}{Standard Model } 
 
-\newcommand{\gammam}{$\gamma$ }
+
+\newcommand{\chisquared}{$\chi^2$ }
+\newcommand{\Deltam}{$\Delta$ }
 \newcommand{\etam}{$\eta$ }
+\newcommand{\gammam}{$\gamma$ }
 \newcommand{\lambdam}{$\lambda$ }
 \newcommand{\num}{$\nu$ }
 \newcommand{\mum}{$\mu$ }
+\newcommand{\phim}{$\phi$ }
 \newcommand{\pim}{$\pi$ }
+\newcommand{\rhom}{$\rho$ }
 \newcommand{\sigmam}{$\sigma$ }
 \newcommand{\thetam}{$\theta$ }
-\newcommand{\phim}{$\phi$ }
-\newcommand{\taul}{$\tau-$lepton }
-\newcommand{\chisquared}{$\chi^2$ }
+
 
 % --- The same thing as above but with no space after it
 \newcommand{\mc}{MC simulations} 
@@ -78,19 +86,22 @@
 \newcommand{\z}{Z-boson}                                                    
 \newcommand{\ra}{Resolved analysis}
 \newcommand{\ba}{Boosted analysis}  
+\newcommand{\cba}{Cut-Based analysis}
 \newcommand{\sm}{Standard Model} 
 
-\newcommand{\gammamo}{$\gamma$}
+\newcommand{\chisquaredo}{$\chi^2$}
+\newcommand{\Deltamo}{$\Delta$}
 \newcommand{\etamo}{$\eta$}
+\newcommand{\gammamo}{$\gamma$}
 \newcommand{\lambdamo}{$\lambda$}
 \newcommand{\numo}{$\nu$}
 \newcommand{\mumo}{$\mu$}
+\newcommand{\phimo}{$\phi$}
 \newcommand{\pimo}{$\pi$}
+\newcommand{\rhomo}{$\rho$}
 \newcommand{\sigmamo}{$\sigma$}
 \newcommand{\thetamo}{$\theta$}
-\newcommand{\phimo}{$\phi$}
-\newcommand{\taulo}{$\tau-$lepton}
-\newcommand{\chisquaredo}{$\chi^2$}
+
 
 % --- Things for Quantum mechanics easier without relying on new packages.
 \newcommand{\bra}[1]{\ensuremath{\left.\middle| #1 \right\rangle} }    % bra |x>
@@ -103,7 +114,7 @@
 	\newcommand{\dno}{\ensuremath{d_0}}                                     %Transverse impact parameter d_0 at the end of a phrase or sentence.      
 \newcommand{\pt}{\ensuremath{p_{\text{T}}} }
 \newcommand{\ptv}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum 
-	\newcommand{\ptvo}{\ensuremath{p_{\text{T}}^{V}} }                      %Vector boson transverse momentum at the end of a phrase or sentence.
+	\newcommand{\ptvo}{\ensuremath{p_{\text{T}}^{V}}}                  %Vector boson transverse momentum at the end of a phrase or sentence.
 \newcommand{\ptz}{\ensuremath{p_{\text{T}}^{Z}} }                      %Z boson transverse momentum 
 \newcommand{\ptw}{\ensuremath{p_{\text{T}}^{W}} }                      %W boson transverse momentum 
 \newcommand{\met}{\ensuremath{E_{\text{T}}^{\text{miss}}} }            %missing transverse energy 
@@ -111,35 +122,42 @@
 \newcommand{\mpt}{\ensuremath{E_{\text{T,~trk}}^{\text{miss}}} }       %track-based missing transverse energy 
 \newcommand{\mJ}{\ensuremath{m_{\text{J}}} }                           %large-R jet  mass 
 \newcommand{\mll}{\ensuremath{m_{ll}} }                                %di-lepton  mass 
-\newcommand{\gev}{\ensuremath{~GeV }}								 %Units of energy
-	\newcommand{\gevo}{\ensuremath{~GeV}}								  %Units of energy at the end of a phrase or sentence
+\newcommand{\gev}{~GeV }								 %Units of energy
+	\newcommand{\gevo}{~GeV}								  %Units of energy at the end of a phrase or sentence
 	
 % --- VHbb Analyses and Regions
 \newcommand{\zlep}{\ensuremath{0}-lepton }
 \newcommand{\olep}{\ensuremath{1}-lepton }
 \newcommand{\tlep}{\ensuremath{2}-lepton }
+\newcommand{\zlepo}{\ensuremath{0}-lepton}
+\newcommand{\olepo}{\ensuremath{1}-lepton}
+\newcommand{\tlepo}{\ensuremath{2}-lepton}
 
-\newcommand{\Hbb}{\ensuremath{H \to b\bar{b}} }                        %Hbb
-\newcommand{\VHbb}{\ensuremath{VH, H\to b\bar{b}} }                    %VHbb
-\newcommand{\ttbar}{\ensuremath{t\bar{t}} }                            %ttbar
+\newcommand{\Hbb}{\ensuremath{H \to b\bar{b}} }                          %Hbb
+\newcommand{\VHbb}{\ensuremath{VH, H\to b\bar{b}} }                      %VHbb
+\newcommand{\VZbb}{\ensuremath{VZ, Z\to b\bar{b}} }                      %VZbb
+\newcommand{\VHcc}{\ensuremath{VH, Z\to c\bar{c}} }                      %VZcc
+\newcommand{\ttbar}{\ensuremath{t\bar{t}} }                              %ttbar
 
-\newcommand{\medPTV}{\ensuremath{75~GeV \leq \ptv < 150~GeV} }           %medium PTV region
-\newcommand{\highPTV}{\ensuremath{150~GeV \leq \ptv < 250~GeV} }         %high PTV region
-\newcommand{\extremePTV}{\ensuremath{\ptv \ge 250~GeV} }                 %extreme PTV region
-\newcommand{\immensePTV}{\ensuremath{250~GeV \leq \ptv  < 400~GeV} }         %immense PTV region
-\newcommand{\utmostPTV}{\ensuremath{\ptv \ge 400~GeV} }                      %utmost PTV region
+\newcommand{\oldPTV}{\ensuremath{\ptv < 150}~GeV }                    %old highptv region
+\newcommand{\medPTV}{\ensuremath{75}~GeV \ensuremath{\leq \ptv < 150}~GeV }           %medium PTV region
+\newcommand{\highPTV}{\ensuremath{150}~GeV\ensuremath{\leq \ptv < 250}~GeV }         %high PTV region
+\newcommand{\extremePTV}{\ensuremath{\ptv \ge 250}~GeV }              %extreme PTV region
+\newcommand{\immensePTV}{\ensuremath{250}~GeV\ensuremath{\leq \ptv < 400}~GeV }         %immense PTV region
+\newcommand{\utmostPTV}{\ensuremath{\ptv \ge 400}~GeV }               %utmost PTV region
 
 
 % --- Other useful shortcuts
-\newcommand{\ifb}{fb\ensuremath{^{-1}} }                               % integrated luminosity
+\newcommand{\ifb}{fb\ensuremath{^{-1}} }                               
+\newcommand{\ifbo}{fb\ensuremath{^{-1}}}                               % integrated luminosity
 \newcommand{\lumi}{\ensuremath{139} fb\ensuremath{^{-1}} }             % physics integrated luminosity at ATLAS
 \newcommand{\sorb}{\ensuremath{\frac{s}{\sqrt{b}}} }                   % signal over root background
 \newcommand{\range}[3]{\ensuremath{#2 < #1 < #3} }                     % [1] between range of [2] and [3] exclusive
 \newcommand{\rangei}[3]{\ensuremath{#2 \leq #1 \leq #3} }              % [1] between range of [2] and [3] inclusive
 
-%________________________________________________________________________________
+%__________________________________________________________________
 %---------------------------------- Style Edits
-%________________________________________________________________________________
+%__________________________________________________________________
 
 \usepackage[hidelinks]{hyperref} % All references will jump to place they are declared. Hyperrefs will be the color of the text unless changed by \hypersetup.
 	\hypersetup{
@@ -185,9 +203,14 @@
  
 \setlength{\parindent}{0pt} % No indents
 
-%________________________________________________________________________________
-%________________________________________________________________________________
-%________________________________________________________________________________
+% Get \subsection to show up in contents page
+% If you want the display to go deeper then 4 is \paragraph{} and 5 is \subparagraph{}
+\setcounter{tocdepth}{3} 
+\setcounter{secnumdepth}{3} 
+	
+%__________________________________________________________________
+%__________________________________________________________________
+%__________________________________________________________________
 
 \begin{document}% Starts the Document
 
@@ -200,9 +223,9 @@
 
 	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
 
-	{\Huge \textbf{VHbb: A Story}}
-	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
-	{\Huge A Study of The Associated Production of the Higgs Boson with a Vector Boson with the Run II dataset from the ATLAS experiment at CERN.\\[1cm] Fake Rate Studies}\\[2cm] %Title
+	{\Huge Higgs Boson studies:}
+	{\Huge associated production with a vector boson and decay into b-quarks using the ATLAS Run-2 dataset.}\\[1cm] %Title
+	\rule[0.4cm]{15cm}{.2pt}\\[4cm] %Adds a line underneath 
 	{\LARGE Dwayne Isaac Patrick Laurence \textsc{Spiteri}}\\[1cm] %Author
 	{\small \today}\\[1cm] %Date
 	{\small 
@@ -236,18 +259,19 @@ I see no good reasons why the views given in this volume should shock the religi
 
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Figures}
-%\listoffigures
+\listoffigures
 \cleardoublepage
 
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Tables}
-%\listoftables
+\listoftables
 
 \doublespacing
+%\onehalfspacing
 
 \mainmatter % Turn on chapter numbering, reset page numbers, use arabic
 \linenumbers % To be commented out in the final draft.
-
+\begin{comment}
 \part[High Energy Physics Background]{
 \pgfornament[width=10cm]{69}\\[4mm]
 High Energy Physics Background \\
@@ -265,15 +289,15 @@ High Energy Physics Background \\
 *
 \doublespacing
 }
-%\begin{comment}
+
 	\chapter{Introduction}
 	\label{chap:intro}
 	\input{Introduction/Introduction.tex}
-%\end{comment}
+
 	\chapter{Standard Model Theory}
 	\label{chap:theory}
 	\input{Theory/Theory.tex}
-%\begin{comment}
+
 	\chapter{CERN and The LHC}
 	\label{chap:CERNLHC}
 	\input{LHC/LHC.tex}
@@ -307,9 +331,10 @@ The ATLAS Experiment \\
 	\label{chap:FakeTracks}
 	\input{FakeTracks/FakeTracks.tex}
 
-	\chapter{Object Selection}
+	\chapter{Object Definitions}
 	\label{chap:ObjSel}
 	\input{ObjectSelection/ObjectSelection.tex}
+\end{comment}
 
 \part[Physics Analysis]{
 \pgfornament[width=10cm]{69}\\[4mm]
@@ -331,22 +356,24 @@ Physics Analysis \\
 	\chapter{An overview of the VHbb Analyses}
 	\label{chap:Analyses}
 	\input{TheAnalyses/TheAnalyses.tex}
-
-	\chapter{Statistics, Fits and Significances}
-	\label{chap:Statfits}
+\begin{comment}
+	
+	\chapter{The VHbb Fits and Post-fit Modelling Investigations}
+	\label{chap:StatFits}
+    \chaptermark{VHbb Fits and Post-fit Investigations}	
 	\input{StatFits/StatFits.tex}
-    
+  
 	\chapter{$\mathbf{E_{T}^{miss}}$ Triggers in the 2-Lepton Analyses}
 	\label{chap:METTriggerStudy}
 	\chaptermark{\met Triggers in the 2-Lepton Analyses}
 	\input{TriggerStudy/TriggerStudy.tex}
 
 
-\chapter{Conclusion}
+\chapter{Conclusion and Results}
 \label{chap:conc}
 \input{Conclusion/Conclusion.tex}
-%\end{comment}
-%\begin{comment}
+
+
 \begin{appendices}
 \chapter{The Journey from Newtonian to Lagrangian Mechanics}
 \label{app:C2L}
@@ -368,7 +395,7 @@ Physics Analysis \\
 \input{Appendices/RequiredSignificance.tex}
 
 \end{appendices}
-%\end{comment}
+\end{comment}
 \backmatter  % Turn off chapter numbering
 
 % Bibliography
@@ -376,6 +403,6 @@ Physics Analysis \\
 
 * Banner image for part headings from https://atlasvirtualvisit.web.cern.ch/
 \end{document}
-%________________________________________________________________________________
-%________________________________________________________________________________
-%________________________________________________________________________________
+%__________________________________________________________________
+%__________________________________________________________________
+%__________________________________________________________________
