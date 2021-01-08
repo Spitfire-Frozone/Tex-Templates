@@ -201,10 +201,9 @@
     {\Large PhD Thesis}
 	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
 
-	{\Huge Higgs boson studies:}
-	{\Huge associated production with a vector boson and decay into b-quarks using the ATLAS Run-2 dataset.}\\[1cm] %Title
+	{\Huge Example Thesis Template by Dr Dwayne Spiteri}\\[1cm] %Title
 	\rule[0.4cm]{15cm}{.2pt}\\[4cm] %Adds a line underneath 
-	{\LARGE Dwayne Isaac Patrick Laurence \textsc{Spiteri}}\\[1cm] %Author
+	{\LARGE You Names Go Here \textsc{Surname}}\\[1cm] %Author
 	{\small \today}\\[1cm] %Date
 	{\small 
 		Submitted in fulfilment of the requirements for the\\
@@ -217,11 +216,9 @@
 
 %-------------------------------------------------ABSTRACT
 \chapter{Abstract}
-On the 4th July 2012, the \SM of Particle Physics received further validation with the discovery of the Higgs boson; ushering in a new age of Higgs physics. This thesis presents some of my contributions to the current research in this field as a member of the ATLAS experiment at CERN. It explains how the ATLAS experiment fits within the CERN accelerator complex and the structure of the ATLAS detector, leading to a description of some of the work that I did towards the upgrade of its hardware, and my studies on the reconstruction of tracks in the detector.\\
+\tcg{Here's a portion of my abstract.}\\
 
-The thesis goes on to present the results of two analyses I worked on: The \VHbb (read: VHbb) \Ra and the \VHbb \ba. Specific attention will be drawn to my fit studies in the \ra, and the new trigger strategy I designed for the \ba. \\
-
-The analyses make use of \lumi of proton-proton collision data at the centre-of-mass energy of $\sqrt{s}$ = 13 TeV, collected by the ATLAS detector between 2015 and 2018, to observe the Higgs boson decay to \bo-quarks via associated Vector Boson production (\VHbbo), and go on to provide differential cross-section measurements in bins of the transverse momentum of the vector bosons.\\
+On the 4th July 2012, the \SM of Particle Physics received further validation with the discovery of the Higgs boson; ushering in a new age of Higgs physics. This thesis presents some of my contributions to the current research in this field as a member of the ATLAS experiment at CERN. It explains how the ATLAS experiment fits within the CERN accelerator complex and the structure of the ATLAS detector, leading to a description of some of the work that I did towards the upgrade of its hardware, and my studies on the reconstruction of tracks in the detector.
 
 %-----------------------------------------------DEDICATION
 
@@ -269,11 +266,11 @@ The material presented in this thesis is the result of my own research work in t
 
 \tcg{I like having this in my thesis as I find it makes it easy for examiners to pinpoint which parts are going to detail your contribution from the outset.}\\
 
-The list below specifies which parts of the thesis contain my own original work.\\
+The list below specifies which parts of the thesis contain my own original work. \tcg{The numbers are random here and the text is borrowed from my thesis, but you can see what I am doing here.}\\
 \begin{description}
-\item[Chapter 4] This chapter is dedicated to the studies I performed for the Tracking Combined Performance Group, parametrising the differences between the Monte Carlo modelling of tracks and those reconstructed from data, and deriving recommendations for the collaboration.
-\item[Chapter 5] The second part of the chapter (from section \ref{sec:postfitmodel} onwards) shows the work I did in the \Ra to understand and improve the fit model in the \zlep Standalone fit.\smallskip
-\item[Chapter 6] This chapter summarises the work done to increase the significance of the \Ba \tlep channel.
+\item[Chapter 3] This chapter is dedicated to the studies I performed for the Tracking Combined Performance Group, parametrising the differences between the Monte Carlo modelling of tracks and those reconstructed from data, and deriving recommendations for the collaboration.
+\item[Chapter 4] The second part of the chapter (from section 4.3 onwards) shows the work I did in the Resolved Analysis to understand and improve the fit model in the 0-Lepton Standalone fit.\smallskip
+\item[Chapter 5] This chapter summarises the work done to increase the significance of the Boosted Analysis 2-Lepton channel.
 \end{description}
 
 This work contributed to the following journal publications:
@@ -320,40 +317,6 @@ High Energy Physics Background \\
 	\label{chap:theory}
 	%\input{Theory/Theory.tex}
 
-	\chapter{CERN and the LHC}
-	\label{chap:CERNLHC}
-	%\input{LHC/LHC.tex}
-
-\part[The ATLAS Experiment]{
-\pgfornament[width=10cm]{69}\\[4mm]
-The ATLAS Experiment \\
-\singlespacing
-\begin{flushleft}
-	\normalfont
-	\small 
-	%``He had high hopes for it this time; he had followed all the instructions on plug changing on page 5 of \tit{A Boy's Own Book Of Practical Electronics, Including A Hundred and One Safe and Educational Things to Do With Electricity}. He had attached the correct coloured wires to the correct pins; he'd checked that it was the right amperage fuse; he'd screwed it all back together; So far, no problems. He plugged it into the socket. Then he switched the socket on.\\[4mm] 
-	%Every light in the house went out.\\ 
-	%Newton beamed with pride. He was getting better."\\ 
-	%\hspace*{\fill} - T.Prachett \& N.Gaiman, \tit{Good Omens}
-	``Where a computer on the ENIAC is equipped with 18,000 vacuum tubes and weighs 30 tons, machines in the future may have only 1,000 vacuum tubes and weigh only 1.5 tons". \\
-	\hspace*{\fill} - Popular Mechanics, March 1949
-\end{flushleft}
-\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{ATLAS-Banner.jpg}~\\[4mm]
-\end{figure}	
-**
-\doublespacing
-}
-
-	\chapter{The ATLAS detector}
-	\label{chap:ATLAS}
-	%\input{ATLAS/ATLAS.tex}
-
-	\chapter{Fake tracks in the ATLAS detector}
-	\label{chap:FakeTracks}
-	%\input{FakeTracks/FakeTracks.tex}
-
-
 \part[Physics Analysis]{
 \pgfornament[width=10cm]{69}\\[4mm]
 Physics Analysis \\
@@ -379,7 +342,7 @@ Physics Analysis \\
 
 	\chapter{$\mathbf{E_{T}^{miss}}$ triggers in the 2-Lepton\\ channels}
 	\label{chap:METTriggerStudy}
-	\chaptermark{\met Triggers in the 2-Lepton Analyses}
+	\chaptermark{$E_{T}^{miss}$ Triggers in the 2-Lepton Analyses}
 	%\input{TriggerStudy/TriggerStudy.tex}
 
 \chapter{Results and Conclusion}
@@ -393,11 +356,6 @@ Physics Analysis \\
 \label{app:C2L}
 \chaptermark{Newtonian to Lagrangian Mechanics}
 %\input{Appendices/Newton2Lagrangian.tex}
-
-\chapter{Axioms of Quantum Mechanics and their consequences}
-\label{app:QM}
-\chaptermark{Axioms and Consequences of Quantum Mechanics}
-%\input{Appendices/QuantumMechanics.tex}
 
 \end{appendices}
 \backmatter  % Turn off chapter numbering
