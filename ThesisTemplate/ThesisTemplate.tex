@@ -1,0 +1,415 @@
+\documentclass[12pt,titlepage,oneside]{book}
+%__________________________________________________________
+%------------------------------Package Includes in alphabetical order.
+
+%Except for overall styles which typically clash with a lot of packages and are thus done after the commands.
+%__________________________________________________________
+\usepackage{adjustbox} %Allows for the creation of boxes that can be sized independently
+\usepackage{amsmath, amssymb, amsthm, cancel}% For mathematical Symbols
+\usepackage[toc,page]{appendix}% for the appendices.
+\usepackage[backend=biber,style=numeric-comp,bibencoding=ascii,sorting=none]{biblatex} %like ieee(tr) sytle but with clickable doi links. 
+	\addbibresource{BibliographyExample.bib}
+\usepackage{bm}% For bold mathematical - especially for titles.
+\usepackage{breakcites} %Allows links to be broken so that they don't go over the margins. Also requires breaklinks=true in the hyperref package. See the Style Edits section. 
+\usepackage[font={small,it}]{caption} %Allows for small captions with an italicised font
+\usepackage{comment}% Used to comment out large sections of the Thesis.
+\usepackage{fancyhdr} % Puts headers and footers into the document
+\usepackage{feynmp, feynmp-auto} % Allows for use of Feynmann diagram environments
+\usepackage{float} %To allow the setting of a [H] in figure placement
+\usepackage{gensymb} %For use of \degree.
+\usepackage[top=2.5cm, bottom=1.8cm,left=4.0cm,right=1.5cm]{geometry} % Alters the margins. % These margins are the university guidelines
+\usepackage{graphicx} % Standard package for importing graphics files
+\usepackage{lineno} % For line numbers when i'm writing drafts
+\usepackage[version=4]{mhchem} % Allows correct index notation for chemical elements
+\usepackage{rotating} % Allows the addition of sideways figures, caption included.
+\usepackage{setspace}  % [onehalfspacing] gives one-and-a-half line spacing. Doublespacing is another option and can be changed in the text (\doublespacing)
+\usepackage{slashed} % For Feynmann slash notation.
+\usepackage{subfig} % Allows for manipulation of sub-figures. Cannot be used in conjection with subcaption package.
+\usepackage{tabu} %Allows for greater table edition flexibility.
+\usepackage[dvipsnames,table,xcdraw]{xcolor}  %Allows for usage of certain colours. The table edition flexibility  now global options due to clash with package pgfornament].
+\usepackage{url} % To stop very long links in the references running off the page
+	\def\UrlBreaks{\do\/\do-}
+%_________________________________________________________
+%----------------------------------------------- COMMANDS
+%_________________________________________________________
+	\definecolor{BLOODRED}{RGB}{200,20,20}
+	\definecolor{GRASSGREEN}{RGB}{20,200,20}
+	\definecolor{CERULEAN}{RGB}{20,100,200}	
+	\definecolor{MUSTARD}{RGB}{200,200,0}
+	
+\newcommand{\tcr}[1]{\textcolor{BLOODRED}{#1}} % RED highlight: Note to self
+\newcommand{\tcg}[1]{\textcolor{GRASSGREEN}{#1}} % GREEN highlight: To be moved to a different section
+\newcommand{\tcc}[1]{\textcolor{CERULEAN}{#1}} % BLUE highlight: things to expand upon
+
+\newcommand{\fchard}[4]{\textcolor{BLOODRED}{#1}\textcolor{GRASSGREEN}{#2}\textcolor{CERULEAN}{#3}\textcolor{MUSTARD}{#4}} % 4 colours that look nice together
+
+	\definecolor{DANORANGE}{RGB}{239,100,97}
+	\definecolor{DANGREEN}{RGB}{121,180,115}
+	\definecolor{DANBLUE}{RGB}{41,115,115}
+	\definecolor{DANPURPLE}{RGB}{113,62,90}
+	
+\newcommand{\fcsoft}[4]{\textcolor{DANORANGE}{#1}\textcolor{DANGREEN}{#2}\textcolor{DANBLUE}{#3}\textcolor{DANPURPLE}{#4}} % 4 colours that look nice together
+
+\newcommand{\tit}[1]{\textit{#1}} % Emphasise new variables.
+\newcommand{\tsc}[1]{\textsc{#1}} % Mostly for Programmes like Pythia or Geant4.
+
+\newcommand{\bigfrac}[2]{\frac{\displaystyle {#1}}{\displaystyle {#2}}} %make fraction text larger
+
+
+% --- Things I am sick to death of writing all the time.
+\newcommand{\MC}{MC simulations }
+\newcommand{\MCed}{MC simulated events }                                               
+\newcommand{\W}{W-boson }                                                    
+\newcommand{\Z}{Z-boson }  
+\newcommand{\Ra}{Resolved analysis }
+\newcommand{\Ba}{Boosted analysis }  
+\newcommand{\SM}{Standard Model } 
+
+
+\newcommand{\chisquared}{$\chi^2$ }
+\newcommand{\Deltam}{$\Delta$ }
+\newcommand{\etam}{$\eta$ }
+\newcommand{\gammam}{$\gamma$ }
+\newcommand{\lambdam}{$\lambda$ }
+\newcommand{\num}{$\nu$ }
+\newcommand{\mum}{$\mu$ }
+\newcommand{\phim}{$\phi$ }
+\newcommand{\pim}{$\pi$ }
+\newcommand{\rhom}{$\rho$ }
+\newcommand{\sigmam}{$\sigma$ }
+\newcommand{\thetam}{$\theta$ }
+
+
+% --- The same thing as above but with no space after it
+\newcommand{\mc}{MC simulations} 
+\newcommand{\mced}{MC simulated events}
+\newcommand{\w}{W-boson}                                                   
+\newcommand{\z}{Z-boson}                                                    
+\newcommand{\ra}{Resolved analysis}
+\newcommand{\ba}{Boosted analysis}  
+\newcommand{\sm}{Standard Model} 
+
+\newcommand{\bo}{$b$}
+\newcommand{\chisquaredo}{$\chi^2$}
+\newcommand{\Deltamo}{$\Delta$}
+\newcommand{\etamo}{$\eta$}
+\newcommand{\gammamo}{$\gamma$}
+\newcommand{\lambdamo}{$\lambda$}
+\newcommand{\numo}{$\nu$}
+\newcommand{\mumo}{$\mu$}
+\newcommand{\phimo}{$\phi$}
+\newcommand{\pimo}{$\pi$}
+\newcommand{\rhomo}{$\rho$}
+\newcommand{\sigmamo}{$\sigma$}
+\newcommand{\thetamo}{$\theta$}
+
+
+% --- Things for Quantum mechanics easier without relying on new packages.
+\newcommand{\bra}[1]{\ensuremath{\left.\middle| #1 \right\rangle} }    % bra |x>
+\newcommand{\ket}[1]{\ensuremath{\left\langle #1 \middle|\right.} }    % ket <x|
+\newcommand{\braket}[2]{\ensuremath{\left\langle #1 \middle| #2 \right\rangle} } % bra-ket <x|x>
+\newcommand{\abs}[1]{\ensuremath{\mid #1\mid} }                        % for absolute value of something
+	\newcommand{\abso}[1]{\ensuremath{\mid #1\mid}}
+	
+
+%Units of energy
+\newcommand{\mev}{\,MeV }								                  
+	\newcommand{\mevo}{\,MeV}	
+\newcommand{\gev}{\,GeV }								                  
+	\newcommand{\gevo}{\,GeV}					
+\newcommand{\tev}{\,TeV }								                  
+	\newcommand{\tevo}{\,TeV}		
+
+% --- Other useful shortcuts
+\newcommand{\ifb}{\,fb\ensuremath{^{-1}} }                               
+	\newcommand{\ifbo}{\,fb\ensuremath{^{-1}}}                         % integrated luminosity
+\newcommand{\lumi}{\ensuremath{139}\,fb\ensuremath{^{-1}} }             % physics integrated luminosity at ATLAS
+\newcommand{\lumio}{\ensuremath{139}\,fb\ensuremath{^{-1}}}             % physics integrated luminosity at ATLAS
+\newcommand{\sorb}{\ensuremath{\frac{s}{\sqrt{b}}} }                   % signal over root background
+\newcommand{\range}[3]{\ensuremath{#2 < #1 < #3} }                     % [1] between range of [2] and [3] exclusive
+	\newcommand{\rangeo}[3]{\ensuremath{#2 < #1 < #3}}                    
+\newcommand{\rangei}[3]{\ensuremath{#2 \leq #1 \leq #3} }              % [1] between range of [2] and [3] inclusive
+	\newcommand{\rangeio}[3]{\ensuremath{#2 \leq #1 \leq #3}} 
+%_________________________________________________________
+%--------------------------------------------- STYLE EDITS
+%_________________________________________________________
+
+\usepackage{palatino} % Changes the font of the document
+
+\usepackage[hidelinks,breaklinks=true]{hyperref} % All references will jump to place they are declared. Hyperrefs will be the color of the text unless changed by \hypersetup.
+	\hypersetup{
+    	colorlinks = true,
+    	linkcolor  = black,   
+    	citecolor  = black,   
+    	urlcolor   = WildStrawberry,
+		}
+\usepackage{pgfornament} % Addition of glyphs for page decoration
+
+
+% Adds in a box with the chapter number in it
+\usepackage{calc,soul}  
+\makeatletter 
+\newlength\dlf@normtxtw 
+\setlength\dlf@normtxtw{\textwidth} 
+\newsavebox{\feline@chapter} 
+\newcommand\feline@chapter@marker[1][3.5cm]{%
+	\sbox\feline@chapter{% 
+		\resizebox{!}{#1}{\fboxsep=1pt%
+			\colorbox{gray}{\color{white}\thechapter}% 
+		}}%
+		\rotatebox{90}{% 
+			\resizebox{%
+				\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}% 
+			{!}{\scshape\so\@chapapp}}\quad%
+		\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+} 
+
+% Edits the Chapter style such that it removes the display of the Chapter XX at the start of a chapter and replaces it with the box.
+\usepackage{titlesec}  
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{\normalfont\feline@chapter@marker}{0pt}{\Huge} 
+  
+% For creating the large letter at the start of each chapter.
+\usepackage{lettrine}
+\usepackage{Zallman}
+\renewcommand{\LettrineFontHook}{\color{cyan}\Zallmanfamily{}}
+\newcommand{\initial}[1]{
+	\lettrine[lines=3,lhang=0.33,nindent=0em]{
+		\color{gray}
+     		{\textsc{#1}}}{}}
+ 
+\setlength{\parindent}{0pt} % No indents
+
+% Get \subsection to show up in contents page
+% If you want the display to go deeper then 4 is \paragraph{} and 5 is \subparagraph{}
+\setcounter{tocdepth}{3} 
+\setcounter{secnumdepth}{3} 
+
+\begin{document}% Starts the Document
+
+%-------------------------------------------THE FRONT PAGE
+
+\thispagestyle{empty}% To get rid of page number for this page
+
+	\begin{center} %Centres the items that follow
+	\includegraphics[width=0.7\textwidth]{ExperPartPhys_colour.pdf}~\\[4mm]%Inserts University Logo
+	School of Physics and Astronomy\\
+	University of Glasgow\\
+	Glasgow\\
+	G12 8QQ\\[8mm] %Adds the postcode of the uni and then a 4mm gap.
+
+    {\Large PhD Thesis}
+	\rule[0.4cm]{15cm}{.2pt}\\ %Adds a line underneath 
+
+	{\Huge Higgs boson studies:}
+	{\Huge associated production with a vector boson and decay into b-quarks using the ATLAS Run-2 dataset.}\\[1cm] %Title
+	\rule[0.4cm]{15cm}{.2pt}\\[4cm] %Adds a line underneath 
+	{\LARGE Dwayne Isaac Patrick Laurence \textsc{Spiteri}}\\[1cm] %Author
+	{\small \today}\\[1cm] %Date
+	{\small 
+		Submitted in fulfilment of the requirements for the\\
+		Degree of Doctor of Philosophy}\\[1cm] %Word Count
+	\rule[0.4cm]{15cm}{.2pt} 
+	\end{center}
+
+\pagestyle{plain} %Ensures page numbers are at the bottom of the page
+\frontmatter  % Turns off chapter numbering, use roman page numbers
+
+%-------------------------------------------------ABSTRACT
+\chapter{Abstract}
+On the 4th July 2012, the \SM of Particle Physics received further validation with the discovery of the Higgs boson; ushering in a new age of Higgs physics. This thesis presents some of my contributions to the current research in this field as a member of the ATLAS experiment at CERN. It explains how the ATLAS experiment fits within the CERN accelerator complex and the structure of the ATLAS detector, leading to a description of some of the work that I did towards the upgrade of its hardware, and my studies on the reconstruction of tracks in the detector.\\
+
+The thesis goes on to present the results of two analyses I worked on: The \VHbb (read: VHbb) \Ra and the \VHbb \ba. Specific attention will be drawn to my fit studies in the \ra, and the new trigger strategy I designed for the \ba. \\
+
+The analyses make use of \lumi of proton-proton collision data at the centre-of-mass energy of $\sqrt{s}$ = 13 TeV, collected by the ATLAS detector between 2015 and 2018, to observe the Higgs boson decay to \bo-quarks via associated Vector Boson production (\VHbbo), and go on to provide differential cross-section measurements in bins of the transverse momentum of the vector bosons.\\
+
+%-----------------------------------------------DEDICATION
+
+\newpage
+\clearpage
+\begin{center}
+    \thispagestyle{empty}
+    \vspace*{\fill}
+    \begin{flushleft}
+    I had a bit here to dedicate the thesis to some special people.
+    \end{flushleft}
+    \vspace*{\fill}
+\end{center}
+\clearpage
+
+%-----------------------------------------ACKNOWLEDGEMENTS
+
+\chapter{Acknowledgements}
+\doublespacing
+
+First and foremost, I would like to thank everyone who clicked on this and downloaded it. You, in turn, can thank who you like here. We won't judge you.\\
+
+\singlespacing
+
+\phantomsection
+\tableofcontents
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+%-----------------------------------------DECLARATION
+\chapter{Declaration}
+\tit{Let no-one else's work evade your eyes. Remember why the good Lord made your eyes, so don't shade your eyes but plagiarise, plagiarise, plagiarise! - only be sure to always call it please: `research' - Tom Lehrer}\\
+
+\tcg{A declaration is usually written a bit like this:}\\
+
+The material presented in this thesis is the result of my own research work in the [Particle Physics Experimental group] of the [School of Physics and Astronomy] at the [University of Glasgow]. It has not been submitted for any other degree at the [University of Glasgow] or any other institution.\\
+
+\tcg{I like having this in my thesis as I find it makes it easy for examiners to pinpoint which parts are going to detail your contribution from the outset.}\\
+
+The list below specifies which parts of the thesis contain my own original work.\\
+\begin{description}
+\item[Chapter 4] This chapter is dedicated to the studies I performed for the Tracking Combined Performance Group, parametrising the differences between the Monte Carlo modelling of tracks and those reconstructed from data, and deriving recommendations for the collaboration.
+\item[Chapter 5] The second part of the chapter (from section \ref{sec:postfitmodel} onwards) shows the work I did in the \Ra to understand and improve the fit model in the \zlep Standalone fit.\smallskip
+\item[Chapter 6] This chapter summarises the work done to increase the significance of the \Ba \tlep channel.
+\end{description}
+
+This work contributed to the following journal publications:
+\begin{itemize}
+\item[\cite{STXS2020Paper}] Measurements of $WH$ and $ZH$ production in the $H \rightarrow b\bar{b}$ decay channel in $pp$ collisions at 13 TeV with the ATLAS detector.
+\item[\cite{Boosted2020Paper}] Measurement of the associated production of a Higgs boson decaying into $b$-quarks with a vector boson at high transverse momentum in $pp$ collisions at $\sqrt{s} = 13$ TeV with the ATLAS detector.
+\end{itemize} 
+
+%------------------------------------------ MAIN DOCUMENT
+\doublespacing
+%\onehalfspacing
+
+\mainmatter % Turn on chapter numbering, reset page numbers, use arabic
+\linenumbers % To be commented out in the final draft.
+
+%'Part' allows for more organisation of the thesis as it is a Level-0 catagorisation as Chapter is Level-1, Section is Level 2 and so on. If you don't want it you can remove the \part[partTitle]{...}.
+
+\part[High Energy Physics Background]{
+\pgfornament[width=10cm]{69}\\[4mm]
+High Energy Physics Background \\
+\singlespacing
+\begin{flushleft}
+	\normalfont
+	\small 
+	``Trying to construct a broad understanding of the world from a memory of your own experience would be like looking at the ceiling of the Sistine chapel through a long, thin cardboard tube: you can try to remember the individual portions you have spotted here and there, but without a system or a model, you are never going to appreciate the whole picture.\\
+	Let's begin."\\ 
+	\hspace*{\fill} - Ben Goldacre, \tit{Bad Science}
+\end{flushleft}
+\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{ATLAS-Banner.jpg}~\\[4mm]
+\end{figure}	
+\small{Banner image for part headings from \url{https://atlasvirtualvisit.web.cern.ch/}}\\
+\Huge{*}
+\doublespacing
+}
+
+	\chapter{Introduction}
+	\label{chap:intro}
+	\tcg{Here you would add the tex file that corresponds to the Introduction Chapter. I recommend having each chapter in a separate tex file and then using this .tex file as a spine that you build your thesis in. Each chapter is a separate module that you can track. However if one chapter has an error the entire thesis will fail to build. Which is probably for the best.\\}
+	%I have each chapter have it's own folder. This way it's easy to navigate what chapter requires what to build correctly as all images that need to go into each chapter are stored in the same place.\\
+	\input{Introduction/Introduction.tex}
+
+	\chapter{Standard Model theory}
+	\label{chap:theory}
+	%\input{Theory/Theory.tex}
+
+	\chapter{CERN and the LHC}
+	\label{chap:CERNLHC}
+	%\input{LHC/LHC.tex}
+
+\part[The ATLAS Experiment]{
+\pgfornament[width=10cm]{69}\\[4mm]
+The ATLAS Experiment \\
+\singlespacing
+\begin{flushleft}
+	\normalfont
+	\small 
+	%``He had high hopes for it this time; he had followed all the instructions on plug changing on page 5 of \tit{A Boy's Own Book Of Practical Electronics, Including A Hundred and One Safe and Educational Things to Do With Electricity}. He had attached the correct coloured wires to the correct pins; he'd checked that it was the right amperage fuse; he'd screwed it all back together; So far, no problems. He plugged it into the socket. Then he switched the socket on.\\[4mm] 
+	%Every light in the house went out.\\ 
+	%Newton beamed with pride. He was getting better."\\ 
+	%\hspace*{\fill} - T.Prachett \& N.Gaiman, \tit{Good Omens}
+	``Where a computer on the ENIAC is equipped with 18,000 vacuum tubes and weighs 30 tons, machines in the future may have only 1,000 vacuum tubes and weigh only 1.5 tons". \\
+	\hspace*{\fill} - Popular Mechanics, March 1949
+\end{flushleft}
+\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{ATLAS-Banner.jpg}~\\[4mm]
+\end{figure}	
+**
+\doublespacing
+}
+
+	\chapter{The ATLAS detector}
+	\label{chap:ATLAS}
+	%\input{ATLAS/ATLAS.tex}
+
+	\chapter{Fake tracks in the ATLAS detector}
+	\label{chap:FakeTracks}
+	%\input{FakeTracks/FakeTracks.tex}
+
+
+\part[Physics Analysis]{
+\pgfornament[width=10cm]{69}\\[4mm]
+Physics Analysis \\
+\singlespacing
+\begin{flushleft}
+	\normalfont
+	\small 
+	``There's an old Sysan saying that the soup of life is salty enough without adding tears to it."\\ 
+	\hspace*{\fill} - Iain M.Banks, \tit{Look to Windward}
+\end{flushleft}
+\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{ATLAS-Banner.jpg}~\\[4mm]
+\end{figure}	
+***
+\doublespacing
+}
+	
+	\chapter{The VHbb fits and post-fit modelling\\ investigations}
+	\label{chap:StatFits}
+    \chaptermark{VHbb Fits and Post-fit Investigations}
+    %Chaptermarks allow you to have a shorter version of the title appear in the header of each page of that chapter.	
+	%\input{StatFits/StatFits.tex}
+
+	\chapter{$\mathbf{E_{T}^{miss}}$ triggers in the 2-Lepton\\ channels}
+	\label{chap:METTriggerStudy}
+	\chaptermark{\met Triggers in the 2-Lepton Analyses}
+	%\input{TriggerStudy/TriggerStudy.tex}
+
+\chapter{Results and Conclusion}
+\label{chap:conc}
+%\input{Conclusion/Conclusion.tex}
+ 
+\begin{appendices}
+\tcg{Here the appendices are treated like special chapters that contain supplementary/auxiliary material for the thesis.}
+
+\chapter{From Newtonian to Lagrangian\\ Mechanics}
+\label{app:C2L}
+\chaptermark{Newtonian to Lagrangian Mechanics}
+%\input{Appendices/Newton2Lagrangian.tex}
+
+\chapter{Axioms of Quantum Mechanics and their consequences}
+\label{app:QM}
+\chaptermark{Axioms and Consequences of Quantum Mechanics}
+%\input{Appendices/QuantumMechanics.tex}
+
+\end{appendices}
+\backmatter  % Turn off chapter numbering
+
+% Bibliography. Ensures that the margins are respected as best as possible
+\begingroup
+\raggedright
+\sloppy
+\printbibliography
+\endgroup
+
+\end{document}
+%_________________________________________________________
+%_________________________________________________________
+%_________________________________________________________
